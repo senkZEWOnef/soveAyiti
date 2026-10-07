@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { ArrowRight, BookOpen, Landmark, Music, Trophy } from 'lucide-react'
-import { candidates } from '@/data/candidates'
+import { candidates, statusLabels } from '@/data/candidates'
+import { formatDate } from '@/lib/utils'
+import HeroCarousel from '@/components/HeroCarousel'
 import { byCategory, sortedArticles } from '@/data/articles'
 import { questionOfTheWeek } from '@/data/site'
 import {
@@ -24,9 +26,19 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="bg-navy-800 text-cream-50">
-        <div className="container-max grid gap-10 py-16 sm:py-24 lg:grid-cols-5 lg:items-center">
-          <div className="lg:col-span-3">
+      <HeroCarousel
+        candidates={candidates.map((c) => ({
+          slug: c.slug,
+          name: c.name,
+          office: c.office,
+          statusLabel: statusLabels[c.status].ht,
+          statusDate: formatDate(c.statusDate),
+          blurb: c.blurb,
+          photo: c.photo,
+        }))}
+        aside={<ElectionNotice />}
+        brand={
+          <>
             <div className="text-navy-200"><IndependenceBar /></div>
             <h1 className="mt-6 text-4xl font-bold leading-[1.1] sm:text-6xl">
               Konnen kandida yo. <span className="text-flag-500">Verifye</span> enfòmasyon an.
@@ -46,12 +58,9 @@ export default function HomePage() {
                 Resevwa rezime semenn nan
               </Link>
             </div>
-          </div>
-          <div className="lg:col-span-2">
-            <ElectionNotice />
-          </div>
-        </div>
-      </section>
+          </>
+        }
+      />
 
       <section className="section">
         <div className="container-max grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -68,9 +77,12 @@ export default function HomePage() {
       <section className="pb-14 sm:pb-20">
         <div className="container-max">
           <SectionTitle eyebrow="Pwodwi prensipal nou" title="Pwofil kandida" href="/kandida" />
-          <div className="grid gap-5 md:grid-cols-3">
-            {candidates.map((c) => <CandidateCard key={c.slug} candidate={c} />)}
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {candidates.slice(0, 6).map((c) => <CandidateCard key={c.slug} candidate={c} />)}
           </div>
+          <p className="mt-6 text-center">
+            <Link href="/kandida" className="btn-outline">Wè tout {candidates.length} kandida yo</Link>
+          </p>
           <p className="mt-5 text-sm text-navy-600">
             Chak kandida resevwa menm kesyonè a, menm delè, menm espas. Repons yo make kòm deklarasyon, pa kòm fè verifye.
           </p>

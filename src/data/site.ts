@@ -21,9 +21,10 @@ export const site = {
 export const electionStatus = {
   lastVerified: '2026-10-06',
   summary:
-    'Kalandriye elektoral la ap chanje. Nou pa afiche dat final tankou yon konte a rebou: nou make chak dat ak dènye jou nou verifye l.',
+    'Kalandriye elektoral la ap chanje, kidonk nou pa afiche konte a rebou. 12 moun enskri pou prezidans dapre done CEP yo, men se chif prelimine: CEP ap pibliye lis ofisyèl la apre li fin verifye ak valide dosye yo.',
   summaryFr:
-    "Le calendrier électoral est en cours de révision. Nous n'affichons pas de compte à rebours : chaque date indique sa dernière vérification.",
+    "Le calendrier est en révision, donc pas de compte à rebours. 12 inscriptions préliminaires à la présidentielle selon le CEP ; la liste officielle viendra après vérification et validation.",
+  source: { label: 'CEP — statistiques d’enregistrement', url: 'https://cephaiti.ht/statistiques-enregistrement-des-candidats/' },
   items: [] as { label: string; date: string; source: { label: string; url: string } }[],
 }
 

@@ -13,7 +13,7 @@ export default function CandidatesPage() {
       <PageHeader
         eyebrow="Eleksyon"
         title="Pwofil kandida yo"
-        subtitle="Chak pwofil swiv menm fòma a. Sa nou pa ka sipòte ak yon sous, nou pa pibliye l."
+        subtitle="12 enskripsyon prelimine pou prezidans dapre CEP, an atant verifikasyon ofisyèl. Chak pwofil swiv menm fòma a, e sa nou pa ka sipòte ak yon sous, nou pa pibliye l."
       />
       <div className="container-max section">
         <div className="grid gap-8 lg:grid-cols-3">

@@ -1,4 +1,4 @@
-export type CandidacyStatus = 'announced' | 'filed' | 'approved'
+export type CandidacyStatus = 'registered' | 'announced' | 'filed' | 'approved'
 
 export interface SourceLink {
   label: string
@@ -9,7 +9,8 @@ export interface Candidate {
   slug: string
   name: string
   office: string
-  party?: string
+  /** political structure exactly as supplied in the registration data */
+  affiliation?: string
   status: CandidacyStatus
   statusDate: string
   statusSource: SourceLink
@@ -23,8 +24,16 @@ export interface Candidate {
   sources: SourceLink[]
   lastReviewed: string
   corrections: { date: string; note: string }[]
-  /** true while the profile contains template text only */
-  isSample?: boolean
+  /** path under /public (e.g. /candidates/name.jpg). Only use photos you have permission to publish. */
+  photo?: string
+  /** one-line summary shown on the homepage carousel */
+  blurb?: string
+  photoCredit?: string
+  pledges?: { topic: string; pledge: string; timeline?: string; source: SourceLink; date: string }[]
+  program?: { title: string; publishedOn: string; url: string; summary?: string }
+  questionnaireStatus?: 'notSent' | 'sent' | 'received'
+  interviews?: { title: string; date: string; url: string }[]
+  officialLinks?: SourceLink[]
 }
 
 export type Category = 'election' | 'explainer' | 'records' | 'culture' | 'sports'

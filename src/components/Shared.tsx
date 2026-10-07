@@ -32,11 +32,12 @@ export function PageHeader({ eyebrow, title, subtitle }: { eyebrow?: string; tit
   )
 }
 
-export function StatusBadge({ status }: { status: Candidate['status'] }) {
+export function StatusBadge({ status, short = false }: { status: Candidate['status']; short?: boolean }) {
   const s = statusLabels[status]
+  const label = short && status === 'registered' ? 'Prelimine' : s.ht
   return (
     <span className={`inline-block rounded-full px-3 py-1 text-xs font-semibold ${s.tone}`} title={s.fr}>
-      {s.ht}
+      {label}
     </span>
   )
 }
@@ -59,10 +60,10 @@ export function CandidateCard({ candidate }: { candidate: Candidate }) {
   return (
     <Link href={`/kandida/${candidate.slug}`} className="card group flex h-full flex-col">
       <div className="flex items-start justify-between gap-3">
-        <StatusBadge status={candidate.status} />
-        {candidate.isSample && (
-          <span className="rounded border border-flag-500 px-2 py-0.5 text-[10px] font-bold uppercase text-flag-600">
-            Modèl
+        <StatusBadge status={candidate.status} short />
+        {candidate.affiliation && (
+          <span className="rounded border border-navy-300 px-2 py-0.5 text-[11px] font-bold uppercase text-navy-700">
+            {candidate.affiliation}
           </span>
         )}
       </div>
@@ -84,6 +85,9 @@ export function ElectionNotice() {
       <p className="mt-3 text-xs font-semibold text-navy-700">
         Dènye verifikasyon: {formatDate(electionStatus.lastVerified)}
       </p>
+      <a href={electionStatus.source.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-xs underline">
+        Sous: {electionStatus.source.label}
+      </a>
       {electionStatus.items.length > 0 && (
         <ul className="mt-3 space-y-1 text-sm">
           {electionStatus.items.map((i) => (
