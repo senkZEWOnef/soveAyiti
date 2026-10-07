@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { site } from '@/data/site'
+import { useT } from '@/i18n/client'
 
 type Field = {
   name: string
@@ -23,6 +24,7 @@ export default function SimpleForm({
   topic: string
   successMessage: string
 }) {
+  const t = useT()
   const [state, setState] = useState<'idle' | 'sending' | 'done' | 'error' | 'unconfigured'>('idle')
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -60,7 +62,7 @@ export default function SimpleForm({
             <textarea id={f.name} name={f.name} rows={5} required={f.required} placeholder={f.placeholder} className="input" />
           ) : f.type === 'select' ? (
             <select id={f.name} name={f.name} required={f.required} className="input" defaultValue="">
-              <option value="" disabled>Chwazi…</option>
+              <option value="" disabled>{t.form.choose}</option>
               {f.options?.map((o) => <option key={o}>{o}</option>)}
             </select>
           ) : (
@@ -69,15 +71,15 @@ export default function SimpleForm({
         </div>
       ))}
       <button type="submit" disabled={state === 'sending'} className="btn-primary w-full sm:w-auto">
-        {state === 'sending' ? 'Ap voye…' : submitLabel}
+        {state === 'sending' ? t.form.sending : submitLabel}
       </button>
-      {state === 'error' && <p className="text-sm text-flag-700" role="alert">Pa t kapab voye. Eseye ankò.</p>}
+      {state === 'error' && <p className="text-sm text-flag-700" role="alert">{t.form.error}</p>}
       {state === 'unconfigured' && (
         <p className="text-sm text-flag-700" role="alert">
-          Fòm sa poko konekte. Defini NEXT_PUBLIC_FORM_ENDPOINT pou li mache.
+          {t.form.unconfigured}
         </p>
       )}
-      <p className="text-xs text-navy-500">Nou mande sèlman sa ki nesesè. Pa bay enfòmasyon ou pa vle pataje.</p>
+      <p className="text-xs text-navy-500">{t.form.privacy}</p>
     </form>
   )
 }

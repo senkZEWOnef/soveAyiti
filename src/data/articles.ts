@@ -1,11 +1,12 @@
 import type { Article, Category } from '@/types'
 
-export const categoryLabels: Record<Category, { ht: string; fr: string; href: string }> = {
-  election: { ht: 'Eleksyon', fr: 'Élections', href: '/kandida' },
-  explainer: { ht: 'Kijan gouvènman an mache', fr: 'Comment fonctionne l’État', href: '/eksplike' },
-  records: { ht: 'Dokiman piblik', fr: 'Documents publics', href: '/eksplike' },
-  culture: { ht: 'Kilti', fr: 'Culture', href: '/kilti' },
-  sports: { ht: 'Espò', fr: 'Sports', href: '/espo' },
+// Category names are translated in src/i18n/dictionary.ts (categories.*); only the link target lives here.
+export const categoryHref: Record<Category, string> = {
+  election: '/kandida',
+  explainer: '/eksplike',
+  records: '/eksplike',
+  culture: '/kilti',
+  sports: '/espo',
 }
 
 // Starter pieces: structural explainers and editorial notes that make no claim about any

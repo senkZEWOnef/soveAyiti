@@ -4,8 +4,6 @@ export const site = {
   name: 'SoveAyiti',
   frName: 'Sauver Haïti',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://soveayiti.example',
-  tagline: 'Medya endepandan. Sous verifye. Pa gen sipò pou kandida.',
-  independence: ['Medya endepandan', 'Sous verifye', 'Okenn sipò pou kandida'],
   social: {
     facebook: '',
     instagram: '',
@@ -17,15 +15,14 @@ export const site = {
   formEndpoint: process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? '',
 }
 
-// Update this whenever the electoral calendar is re-checked against official sources.
+// Update lastVerified whenever the electoral calendar is re-checked against official sources.
+// The summary text itself is translated in src/i18n/dictionary.ts (electionNotice.*).
 export const electionStatus = {
-  lastVerified: '2026-10-06',
-  summary:
-    'Kalandriye elektoral la ap chanje, kidonk nou pa afiche konte a rebou. 12 moun enskri pou prezidans dapre done CEP yo, men se chif prelimine: CEP ap pibliye lis ofisyèl la apre li fin verifye ak valide dosye yo.',
-  summaryFr:
-    "Le calendrier est en révision, donc pas de compte à rebours. 12 inscriptions préliminaires à la présidentielle selon le CEP ; la liste officielle viendra après vérification et validation.",
-  source: { label: 'CEP — statistiques d’enregistrement', url: 'https://cephaiti.ht/statistiques-enregistrement-des-candidats/' },
+  lastVerified: '2026-10-07',
+  source: { url: 'https://cephaiti.ht/prolongation-de-la-periode-dinscription-en-ligne-des-candidats-et-ajustement-de-certaines-echeances-du-processus-electoral/' },
   items: [] as { label: string; date: string; source: { label: string; url: string } }[],
 }
 
-export const questionOfTheWeek = 'Ki sa ou ta renmen nou eksplike pou ou semèn sa a?'
+// Master switch for the "Rekò piblik" section on candidate profiles. Entries can be stored as drafts in
+// src/data/candidates.ts; nothing shows until this is true AND an entry is reviewStatus 'published'.
+export const showPublicRecord = false

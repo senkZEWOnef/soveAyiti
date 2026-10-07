@@ -4,6 +4,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
+import { useT } from '@/i18n/client'
 
 export interface CandidateSlide {
   slug: string
@@ -26,6 +27,7 @@ export default function HeroCarousel({
   aside: ReactNode
   candidates: CandidateSlide[]
 }) {
+  const t = useT()
   const total = candidates.length + 1
   const [index, setIndex] = useState(0)
   const [hovered, setHovered] = useState(false)
@@ -53,7 +55,7 @@ export default function HeroCarousel({
     <section
       className="bg-navy-800 text-cream-50"
       aria-roledescription="carousel"
-      aria-label="Prezantasyon SoveAyiti ak kandida yo"
+      aria-label={t.hero.label}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
@@ -68,7 +70,7 @@ export default function HeroCarousel({
             }`}
             role="group"
             aria-roledescription="slide"
-            aria-label={`1 sou ${total}`}
+            aria-label={t.hero.slide(1, total)}
             aria-hidden={index !== 0}
           >
             <div className="lg:col-span-3">{brand}</div>
@@ -79,12 +81,10 @@ export default function HeroCarousel({
           {candidates.map((c, n) => {
             const active = index === n + 1
             return (
-              <Link
+              <div
                 key={c.slug}
-                href={`/kandida/${c.slug}`}
-                tabIndex={active ? 0 : -1}
                 aria-hidden={!active}
-                aria-label={`Wè pwofil ${c.name}`}
+                aria-label={t.hero.slide(n + 2, total)}
                 role="group"
                 aria-roledescription="slide"
                 className={`group col-start-1 row-start-1 grid gap-10 transition-opacity duration-500 lg:grid-cols-5 lg:items-center ${
@@ -92,23 +92,33 @@ export default function HeroCarousel({
                 }`}
               >
                 <div className="lg:col-span-3">
-                  <p className="eyebrow !text-flag-500">Kandida · {c.office}</p>
+                  <p className="eyebrow !text-flag-500">{t.hero.eyebrow(c.office)}</p>
                   <h2 className="mt-4 text-4xl font-bold leading-[1.1] sm:text-6xl">{c.name}</h2>
                   <p className="mt-5 inline-block rounded-full bg-navy-700 px-4 py-1.5 text-sm font-semibold">
                     {c.statusLabel}
                   </p>
                   {c.blurb && <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-100">{c.blurb}</p>}
                   <p className="mt-3 text-sm text-navy-300">
-                    Estati sa a dat {c.statusDate}. Enfòmasyon verifye ak sous sou paj pwofil la.
+                    {t.hero.statusAsOf(c.statusDate)}
                   </p>
-                  <span className="btn-accent mt-8">
-                    Wè pwofil la <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <Link href={`/kandida/${c.slug}`} tabIndex={active ? 0 : -1} className="btn-accent" aria-label={t.hero.seeProfileOf(c.name)}>
+                      {t.hero.seeProfile} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                    <Link
+                      href="/vote"
+                      tabIndex={active ? 0 : -1}
+                      className="btn border border-cream-50/70 text-cream-50 hover:bg-cream-50 hover:text-navy-900"
+                      aria-label={t.hero.voteAria(c.name)}
+                    >
+                      {t.hero.voteFor(c.name)}
+                    </Link>
+                  </div>
                 </div>
-                <div className="lg:col-span-2">
+                <Link href={`/kandida/${c.slug}`} tabIndex={-1} aria-hidden className="lg:col-span-2">
                   <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl border border-navy-600 bg-navy-700">
                     {c.photo ? (
-                      <Image src={c.photo} alt={`Foto ${c.name}`} fill sizes="(min-width:1024px) 24rem, 90vw" className="object-cover" />
+                      <Image src={c.photo} alt={t.hero.photoAlt(c.name)} fill sizes="(min-width:1024px) 24rem, 90vw" className="object-cover" />
                     ) : (
                       <div className="flex h-full items-center justify-center font-serif text-7xl font-bold text-navy-300" aria-hidden>
                         {c.name
@@ -119,24 +129,24 @@ export default function HeroCarousel({
                       </div>
                     )}
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             )
           })}
         </div>
 
         {/* Controls */}
         <div className="mt-10 flex items-center gap-3">
-          <button onClick={() => go(index - 1)} aria-label="Slide anvan" className="rounded-full border border-navy-500 p-2 hover:bg-navy-700">
+          <button onClick={() => go(index - 1)} aria-label={t.hero.prev} className="rounded-full border border-navy-500 p-2 hover:bg-navy-700">
             <ChevronLeft className="h-5 w-5" />
           </button>
-          <button onClick={() => go(index + 1)} aria-label="Slide pwochen" className="rounded-full border border-navy-500 p-2 hover:bg-navy-700">
+          <button onClick={() => go(index + 1)} aria-label={t.hero.next} className="rounded-full border border-navy-500 p-2 hover:bg-navy-700">
             <ChevronRight className="h-5 w-5" />
           </button>
           {!reduced && (
             <button
               onClick={() => setPaused((p) => !p)}
-              aria-label={paused ? 'Kontinye defilman an' : 'Poze defilman an'}
+              aria-label={paused ? t.hero.play : t.hero.pause}
               className="rounded-full border border-navy-500 p-2 hover:bg-navy-700"
             >
               {paused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
@@ -147,7 +157,7 @@ export default function HeroCarousel({
               <button
                 key={i}
                 onClick={() => setIndex(i)}
-                aria-label={`Ale nan slide ${i + 1}`}
+                aria-label={t.hero.goTo(i + 1)}
                 aria-current={i === index}
                 className={`h-2.5 rounded-full transition-all ${i === index ? 'w-8 bg-flag-500' : 'w-2.5 bg-navy-400 hover:bg-navy-300'}`}
               />

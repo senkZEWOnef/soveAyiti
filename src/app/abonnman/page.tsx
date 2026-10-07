@@ -1,31 +1,32 @@
 import type { Metadata } from 'next'
 import { PageHeader } from '@/components/Shared'
 import SimpleForm from '@/components/SignupForm'
-import { site, questionOfTheWeek } from '@/data/site'
+import { site } from '@/data/site'
+import { getT } from '@/i18n/server'
 
-export const metadata: Metadata = { title: 'Rezime semenn' }
+export function generateMetadata(): Metadata {
+  return { title: getT().t.digest.metaTitle }
+}
 
 export default function SubscribePage() {
+  const { t } = getT()
+  const d = t.digest
   return (
     <>
-      <PageHeader
-        eyebrow="Rezime semenn"
-        title="Pi bon travay nou, chak semenn"
-        subtitle="Yon rezime kout ak lyen ak pi bon pwofil, eksplikasyon, kilti ak espò. Gratis, volontè, ou ka kite l nenpòt ki lè."
-      />
+      <PageHeader eyebrow={d.eyebrow} title={d.title} subtitle={d.subtitle} />
       <div className="container-max section max-w-2xl">
         {site.social.whatsapp && (
           <a href={site.social.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-accent mb-8">
-            Rejwenn chèn WhatsApp la
+            {d.joinWhatsapp}
           </a>
         )}
         <SimpleForm
           topic="rezime semenn"
-          submitLabel="Abòne"
-          successMessage="Mèsi! Ou abòne."
+          submitLabel={d.submit}
+          successMessage={d.success}
           fields={[
-            { name: 'kontak', label: 'Imèl oswa nimewo WhatsApp', required: true },
-            { name: 'kesyon', label: questionOfTheWeek, type: 'textarea' },
+            { name: 'kontak', label: d.contactLabel, required: true },
+            { name: 'kesyon', label: t.questionOfTheWeek, type: 'textarea' },
           ]}
         />
       </div>

@@ -1,19 +1,23 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, ShieldCheck } from 'lucide-react'
 import type { Article, Candidate } from '@/types'
-import { categoryLabels } from '@/data/articles'
-import { statusLabels } from '@/data/candidates'
+import { categoryHref } from '@/data/articles'
+import { statusTone } from '@/data/candidates'
 import { electionStatus, site } from '@/data/site'
 import { formatDate } from '@/lib/utils'
+import { getT } from '@/i18n/server'
+import { localizeArticle, localizeCandidate } from '@/i18n/content'
 
 export function IndependenceBar() {
+  const { t } = getT()
   return (
     <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold uppercase tracking-wider">
       <ShieldCheck className="h-4 w-4 text-flag-500" aria-hidden />
-      {site.independence.map((t, i) => (
-        <span key={t} className="flex items-center gap-3">
+      {t.independence.map((label, i) => (
+        <span key={label} className="flex items-center gap-3">
           {i > 0 && <span aria-hidden className="text-flag-500">•</span>}
-          {t}
+          {label}
         </span>
       ))}
     </div>
@@ -33,66 +37,80 @@ export function PageHeader({ eyebrow, title, subtitle }: { eyebrow?: string; tit
 }
 
 export function StatusBadge({ status, short = false }: { status: Candidate['status']; short?: boolean }) {
-  const s = statusLabels[status]
-  const label = short && status === 'registered' ? 'Prelimine' : s.ht
+  const { t } = getT()
+  const s = t.status[status]
   return (
-    <span className={`inline-block rounded-full px-3 py-1 text-xs font-semibold ${s.tone}`} title={s.fr}>
-      {label}
+    <span className={`inline-block rounded-full px-3 py-1 text-xs font-semibold ${statusTone[status]}`} title={s.long}>
+      {short && status === 'registered' ? s.short : s.label}
     </span>
   )
 }
 
 export function ArticleCard({ article }: { article: Article }) {
-  const cat = categoryLabels[article.category]
+  const { lang, t } = getT()
+  const a = localizeArticle(article, lang)
   return (
-    <Link href={`/atik/${article.slug}`} className="card group flex h-full flex-col">
-      <p className="eyebrow">{cat.ht}</p>
-      <h3 className="mt-2 text-xl font-bold leading-snug text-navy-900 group-hover:text-flag-600">{article.title}</h3>
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-navy-700">{article.excerpt}</p>
+    <Link href={`/atik/${a.slug}`} className="card group flex h-full flex-col">
+      <p className="eyebrow">{t.categories[a.category]}</p>
+      <h3 className="mt-2 text-xl font-bold leading-snug text-navy-900 group-hover:text-flag-600">{a.title}</h3>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-navy-700">{a.excerpt}</p>
       <p className="mt-4 text-xs text-navy-500">
-        {article.author} · {formatDate(article.date)}
+        {a.author} · {formatDate(a.date, lang)}
       </p>
     </Link>
   )
 }
 
 export function CandidateCard({ candidate }: { candidate: Candidate }) {
+  const { lang, t } = getT()
+  const c = localizeCandidate(candidate, lang)
+  const initials = c.name.split(/[\s-]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase()
+  const where = [c.locality, c.department].filter(Boolean).join(' · ')
   return (
-    <Link href={`/kandida/${candidate.slug}`} className="card group flex h-full flex-col">
-      <div className="flex items-start justify-between gap-3">
-        <StatusBadge status={candidate.status} short />
-        {candidate.affiliation && (
-          <span className="rounded border border-navy-300 px-2 py-0.5 text-[11px] font-bold uppercase text-navy-700">
-            {candidate.affiliation}
+    <Link href={`/kandida/${c.slug}`} className="card group flex h-full flex-col !p-0 overflow-hidden">
+      <div className="relative aspect-[4/5] bg-navy-100">
+        {c.photo ? (
+          <Image src={c.photo} alt={t.hero.photoAlt(c.name)} fill sizes="(min-width:1024px) 15rem, (min-width:640px) 30vw, 90vw" className="object-cover object-top" />
+        ) : (
+          <div className="flex h-full flex-col items-center justify-center gap-1 text-navy-400">
+            <span className="text-5xl font-bold" aria-hidden>{initials}</span>
+            <span className="text-[11px]">{t.common.soon}</span>
+          </div>
+        )}
+        {c.affiliation && (
+          <span className="absolute left-2 top-2 rounded bg-white/90 px-2 py-0.5 text-[11px] font-bold uppercase text-navy-800">
+            {c.affiliation}
           </span>
         )}
       </div>
-      <h3 className="mt-4 text-xl font-bold text-navy-900 group-hover:text-flag-600">{candidate.name}</h3>
-      <p className="mt-1 text-sm text-navy-700">Pòs: {candidate.office}</p>
-      <p className="mt-auto pt-5 text-xs text-navy-500">
-        Dènye revizyon: {formatDate(candidate.lastReviewed)}
-      </p>
+      <div className="flex flex-1 flex-col p-4">
+        <h3 className="text-lg font-bold leading-snug text-navy-900 group-hover:text-flag-600">{c.name}</h3>
+        <p className="mt-1 text-sm text-navy-700">
+          {c.office}{c.position ? ` · ${c.position}` : ''}
+        </p>
+        {where && <p className="text-xs text-navy-500">{where}</p>}
+      </div>
     </Link>
   )
 }
 
 export function ElectionNotice() {
+  const { lang, t } = getT()
   return (
-    <aside className="rounded-xl border border-flag-500/40 bg-white p-5" aria-label="Eta kalandriye elektoral la">
-      <p className="eyebrow">Kalandriye elektoral</p>
-      <p className="mt-2 text-sm leading-relaxed text-navy-800">{electionStatus.summary}</p>
-      <p className="mt-1 text-xs text-navy-500">{electionStatus.summaryFr}</p>
+    <aside className="rounded-xl border border-flag-500/40 bg-white p-5" aria-label={t.electionNotice.eyebrow}>
+      <p className="eyebrow">{t.electionNotice.eyebrow}</p>
+      <p className="mt-2 text-sm leading-relaxed text-navy-800">{t.electionNotice.summary}</p>
       <p className="mt-3 text-xs font-semibold text-navy-700">
-        Dènye verifikasyon: {formatDate(electionStatus.lastVerified)}
+        {t.electionNotice.lastVerified} {formatDate(electionStatus.lastVerified, lang)}
       </p>
       <a href={electionStatus.source.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-xs underline">
-        Sous: {electionStatus.source.label}
+        {t.electionNotice.source} {t.electionNotice.sourceLabel}
       </a>
       {electionStatus.items.length > 0 && (
         <ul className="mt-3 space-y-1 text-sm">
           {electionStatus.items.map((i) => (
             <li key={i.label}>
-              {i.label} — {formatDate(i.date)}{' '}
+              {i.label} — {formatDate(i.date, lang)}{' '}
               <a href={i.source.url} className="underline" target="_blank" rel="noopener noreferrer">
                 {i.source.label}
               </a>
@@ -108,13 +126,14 @@ export function SectionTitle({
   eyebrow,
   title,
   href,
-  cta = 'Wè tout',
+  cta,
 }: {
   eyebrow: string
   title: string
   href?: string
   cta?: string
 }) {
+  const { t } = getT()
   return (
     <div className="mb-8 flex items-end justify-between gap-4">
       <div>
@@ -123,7 +142,7 @@ export function SectionTitle({
       </div>
       {href && (
         <Link href={href} className="hidden items-center gap-1 text-sm font-semibold text-navy-700 hover:text-flag-600 sm:flex">
-          {cta} <ArrowRight className="h-4 w-4" />
+          {cta ?? t.common.seeAll} <ArrowRight className="h-4 w-4" />
         </Link>
       )}
     </div>
@@ -131,23 +150,22 @@ export function SectionTitle({
 }
 
 export function CommentsNotice() {
+  const { t } = getT()
   return (
     <section className="mt-12 rounded-xl border border-dashed border-navy-300 bg-cream-50 p-6" aria-labelledby="komante">
       <h2 id="komante" className="font-sans text-base font-bold text-navy-900">
-        Kòmantè lektè yo
+        {t.comments.title}
       </h2>
-      <p className="mt-2 text-sm leading-relaxed text-navy-700">
-        Kòmantè yo se opinyon lektè yo, yo pa fè pati rapò editoryal nou an e nou pa verifye yo. Dezakò
-        pèmèt; menas, piblikasyon adrès prive, vòlè idantite, spam ak akizasyon san prèv prezante kòm fè yo
-        retire.
-      </p>
+      <p className="mt-2 text-sm leading-relaxed text-navy-700">{t.comments.body}</p>
       {site.social.facebook ? (
         <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" className="btn-outline mt-4">
-          Diskite sou Facebook
+          {t.comments.discuss}
         </a>
       ) : (
-        <p className="mt-3 text-xs text-navy-500">Lyen diskisyon an ap ajoute lè paj la louvri.</p>
+        <p className="mt-3 text-xs text-navy-500">{t.comments.soon}</p>
       )}
     </section>
   )
 }
+
+export { categoryHref }
