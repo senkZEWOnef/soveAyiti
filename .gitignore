@@ -37,3 +37,6 @@ next-env.d.ts
 # poll vote counts (counts only, never who voted)
 /data/votes.json
 /data/votes.json.tmp
+
+# netlify
+.netlify
