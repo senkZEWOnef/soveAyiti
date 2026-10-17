@@ -217,6 +217,26 @@ const details: Record<string, Partial<Candidate>> = {
       { office: 'Minis Ekonomi ak Finans', dates: '2001 – 2002', role: 'Minis nan gouvènman Jean-Bertrand Aristide.' },
     ],
   },
+  // TODO(sources): bio is Spanish-Wikipedia text (last edited 11 Oct 2026); add direct URLs to primary sources.
+  // Registered under the CEP name "Joseph Michel Martelly", structure DEBLOKE. Wikipedia is inconsistent on the end of his
+  // term (infobox 7 Feb 2016, text 10 Feb 2016) so only the month is shown. Education: infobox lists Institution Saint-Louis
+  // de Gonzague and Miami Dade College, the text mentions other schools; only the infobox is used, to be verified.
+  // NOT shown, pending a primary source and the rubric (docs/dosye-piblik-rubrik.md): the 17 Nov 2022 Canadian sanctions
+  // and the corruption allegations from his term. Add them under `publicRecord` with the Global Affairs Canada URL and
+  // offer him a response first. Music career/discography omitted from the profile.
+  // TODO(photo): file was martely.jpg from Downloads; confirm owner/permission before launch.
+  'joseph-michel-martelly': {
+    photo: '/candidates/joseph-michel-martelly.jpg',
+    photoCredit: 'Foto: kredi ak otorizasyon poko konfime',
+    blurb:
+      'Ansyen prezidan Ayiti (2011–2016) ak atis mizik konpa (« Sweet Micky »). Enskripsyon prelimine pou prezidans, estrikti politik: DEBLOKE. Apwobasyon final la ap tann verifikasyon CEP.',
+    education: ['Institution Saint-Louis de Gonzague', 'Miami Dade College (dapre enfobòks Wikipedia, poko verifye)'],
+    career: ['Mizisyen ak konpozitè konpa (depi 1988), li te konn rele « Sweet Micky »'],
+    positions: [
+      { office: 'Prezidan Repiblik Ayiti (41yèm)', dates: '14 me 2011 – fevriye 2016', role: 'Eli apre eleksyon 2010–2011 la. Predesesè: René Préval. Siksesè: Jocelerme Privert (pwovizwa).' },
+      { office: 'Prezidan Kominote Karayib la (CARICOM)', dates: '1 janvye 2013 – 30 jen 2013', role: 'Prezidans wotatif CARICOM.' },
+    ],
+  },
   'jean-ernest-muscadin': {
     photo: '/candidates/jean-ernest-muscadin.jpg',
     photoCredit: 'Foto: kredi ak otorizasyon poko konfime',
