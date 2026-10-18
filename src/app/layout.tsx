@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Source_Serif_4 } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
@@ -10,6 +10,8 @@ import { htmlLang, ogLocale } from '@/i18n/config'
 
 const sans = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' })
 const serif = Source_Serif_4({ subsets: ['latin'], variable: '--font-serif', display: 'swap', weight: ['500', '600', '700'] })
+
+export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#0f2248' }
 
 export function generateMetadata(): Metadata {
   const { lang, t } = getT()

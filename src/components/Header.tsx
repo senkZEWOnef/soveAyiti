@@ -55,14 +55,17 @@ export default function Header() {
           <LanguageSwitcher />
         </nav>
 
+        <div className="flex items-center gap-1 md:hidden">
+          <Link href="/vote" className="btn-accent !px-4 !py-2.5">{t.nav.vote}</Link>
         <button
           onClick={() => setOpen(!open)}
-          className="rounded-md p-2 text-navy-700 hover:bg-cream-200 md:hidden"
+          className="rounded-md p-2.5 text-navy-700 hover:bg-cream-200"
           aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
           aria-expanded={open}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
+        </div>
       </div>
 
       {open && (
@@ -72,7 +75,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="py-3 text-base font-medium text-navy-800"
+              className="border-b border-cream-200 py-3.5 text-base font-medium text-navy-800"
             >
               {item.name}
             </Link>

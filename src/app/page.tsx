@@ -46,20 +46,21 @@ export default async function HomePage() {
         brand={
           <>
             <div className="text-navy-200"><IndependenceBar /></div>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.1] sm:text-6xl">
+            <h1 className="mt-5 text-[2.1rem] font-bold leading-[1.1] sm:mt-6 sm:text-6xl">
               {t.home.h1a}<span className="text-flag-500">{t.home.h1b}</span>{t.home.h1c}
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-100">
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-navy-100 sm:mt-6 sm:text-lg">
               {t.home.lead}
             </p>
             <p className="mt-2 max-w-xl text-sm text-navy-300">
               {t.home.alt}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/kandida" className="btn-accent">
+            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
+              <Link href="/vote" className="btn-accent">{t.nav.vote} <ArrowRight className="h-4 w-4" /></Link>
+              <Link href="/kandida" className="btn border border-navy-300 text-cream-50 hover:bg-navy-700">
                 {t.home.seeProfiles} <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href="/abonnman" className="btn border border-navy-300 text-cream-50 hover:bg-navy-700">
+              <Link href="/abonnman" className="btn hidden border border-navy-300 text-cream-50 hover:bg-navy-700 sm:inline-flex">
                 {t.home.getDigest}
               </Link>
             </div>
@@ -87,7 +88,7 @@ export default async function HomePage() {
       <section className="pb-14 sm:pb-20">
         <div className="container-max">
           <SectionTitle eyebrow={t.home.flagship} title={t.home.profilesTitle} href="/kandida" />
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
             {candidates.slice(0, 6).map((c) => <CandidateCard key={c.slug} candidate={c} />)}
           </div>
           <p className="mt-6 text-center">

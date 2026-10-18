@@ -27,10 +27,10 @@ export function IndependenceBar() {
 export function PageHeader({ eyebrow, title, subtitle }: { eyebrow?: string; title: string; subtitle?: string }) {
   return (
     <div className="border-b border-cream-300 bg-cream-50">
-      <div className="container-max py-12 sm:py-16">
+      <div className="container-max py-9 sm:py-16">
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-        <h1 className="mt-2 max-w-3xl text-4xl font-bold text-navy-900 sm:text-5xl">{title}</h1>
-        {subtitle && <p className="mt-4 max-w-2xl text-lg text-navy-700">{subtitle}</p>}
+        <h1 className="mt-2 max-w-3xl text-3xl font-bold text-navy-900 sm:text-5xl">{title}</h1>
+        {subtitle && <p className="mt-3 max-w-2xl text-base text-navy-700 sm:mt-4 sm:text-lg">{subtitle}</p>}
       </div>
     </div>
   )
@@ -73,7 +73,7 @@ export function CandidateCard({ candidate }: { candidate: Candidate }) {
           <Image src={c.photo} alt={t.hero.photoAlt(c.name)} fill sizes="(min-width:1024px) 15rem, (min-width:640px) 30vw, 90vw" className="object-cover object-top" />
         ) : (
           <div className="flex h-full flex-col items-center justify-center gap-1 text-navy-400">
-            <span className="text-5xl font-bold" aria-hidden>{initials}</span>
+            <span className="text-4xl font-bold sm:text-5xl" aria-hidden>{initials}</span>
             <span className="text-[11px]">{t.common.soon}</span>
           </div>
         )}
@@ -83,9 +83,9 @@ export function CandidateCard({ candidate }: { candidate: Candidate }) {
           </span>
         )}
       </div>
-      <div className="flex flex-1 flex-col p-4">
-        <h3 className="text-lg font-bold leading-snug text-navy-900 group-hover:text-flag-600">{c.name}</h3>
-        <p className="mt-1 text-sm text-navy-700">
+      <div className="flex flex-1 flex-col p-3 sm:p-4">
+        <h3 className="text-base font-bold sm:text-lg leading-snug text-navy-900 group-hover:text-flag-600">{c.name}</h3>
+        <p className="mt-1 text-xs text-navy-700 sm:text-sm">
           {c.office}{c.position ? ` · ${c.position}` : ''}
         </p>
         {where && <p className="text-xs text-navy-500">{where}</p>}

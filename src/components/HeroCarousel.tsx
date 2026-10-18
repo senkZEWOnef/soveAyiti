@@ -61,7 +61,7 @@ export default function HeroCarousel({
       onFocus={() => setHovered(true)}
       onBlur={() => setHovered(false)}
     >
-      <div className="container-max py-14 sm:py-20">
+      <div className="container-max py-9 sm:py-20">
         <div className="grid" aria-live={running ? 'off' : 'polite'}>
           {/* Slide 0: brand */}
           <div
@@ -87,21 +87,21 @@ export default function HeroCarousel({
                 aria-label={t.hero.slide(n + 2, total)}
                 role="group"
                 aria-roledescription="slide"
-                className={`group col-start-1 row-start-1 grid gap-10 transition-opacity duration-500 lg:grid-cols-5 lg:items-center ${
+                className={`group col-start-1 row-start-1 grid gap-5 sm:gap-10 transition-opacity duration-500 lg:grid-cols-5 lg:items-center ${
                   active ? 'opacity-100' : 'invisible opacity-0'
                 }`}
               >
-                <div className="lg:col-span-3">
+                <div className="order-2 lg:order-none lg:col-span-3">
                   <p className="eyebrow !text-flag-500">{t.hero.eyebrow(c.office)}</p>
-                  <h2 className="mt-4 text-4xl font-bold leading-[1.1] sm:text-6xl">{c.name}</h2>
+                  <h2 className="mt-3 text-3xl font-bold leading-[1.1] sm:mt-4 sm:text-6xl">{c.name}</h2>
                   <p className="mt-5 inline-block rounded-full bg-navy-700 px-4 py-1.5 text-sm font-semibold">
                     {c.statusLabel}
                   </p>
-                  {c.blurb && <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-100">{c.blurb}</p>}
+                  {c.blurb && <p className="mt-4 line-clamp-4 max-w-xl text-base leading-relaxed text-navy-100 sm:mt-5 sm:line-clamp-none sm:text-lg">{c.blurb}</p>}
                   <p className="mt-3 text-sm text-navy-300">
                     {t.hero.statusAsOf(c.statusDate)}
                   </p>
-                  <div className="mt-8 flex flex-wrap gap-3">
+                  <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
                     <Link href={`/kandida/${c.slug}`} tabIndex={active ? 0 : -1} className="btn-accent" aria-label={t.hero.seeProfileOf(c.name)}>
                       {t.hero.seeProfile} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
@@ -115,8 +115,8 @@ export default function HeroCarousel({
                     </Link>
                   </div>
                 </div>
-                <Link href={`/kandida/${c.slug}`} tabIndex={-1} aria-hidden className="lg:col-span-2">
-                  <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl border border-navy-600 bg-navy-700">
+                <Link href={`/kandida/${c.slug}`} tabIndex={-1} aria-hidden className="order-1 lg:order-none lg:col-span-2">
+                  <div className="relative mx-auto aspect-[4/5] w-full max-w-[8rem] sm:max-w-[11rem] lg:max-w-sm overflow-hidden rounded-2xl border border-navy-600 bg-navy-700">
                     {c.photo ? (
                       <Image src={c.photo} alt={t.hero.photoAlt(c.name)} fill sizes="(min-width:1024px) 24rem, 90vw" className="object-cover" />
                     ) : (
@@ -136,11 +136,11 @@ export default function HeroCarousel({
         </div>
 
         {/* Controls */}
-        <div className="mt-10 flex items-center gap-3">
-          <button onClick={() => go(index - 1)} aria-label={t.hero.prev} className="rounded-full border border-navy-500 p-2 hover:bg-navy-700">
+        <div className="mt-7 flex items-center gap-3 sm:mt-10">
+          <button onClick={() => go(index - 1)} aria-label={t.hero.prev} className="rounded-full border border-navy-500 p-2.5 hover:bg-navy-700">
             <ChevronLeft className="h-5 w-5" />
           </button>
-          <button onClick={() => go(index + 1)} aria-label={t.hero.next} className="rounded-full border border-navy-500 p-2 hover:bg-navy-700">
+          <button onClick={() => go(index + 1)} aria-label={t.hero.next} className="rounded-full border border-navy-500 p-2.5 hover:bg-navy-700">
             <ChevronRight className="h-5 w-5" />
           </button>
           {!reduced && (

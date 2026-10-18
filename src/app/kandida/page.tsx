@@ -47,9 +47,9 @@ export default function CandidatesPage({ searchParams }: { searchParams: Params 
   const count = (key: OfficeKey) => candidates.filter((c) => c.officeKey === key).length
   const nf = (n: number) => n.toLocaleString(lang === 'en' ? 'en-US' : 'fr-FR')
 
-  const select = 'w-full rounded-lg border border-navy-300 bg-white px-3 py-2 text-sm text-navy-900'
+  const select = 'w-full rounded-lg border border-navy-300 bg-white px-3 py-2.5 text-base text-navy-900 sm:py-2 sm:text-sm'
   const chip = (on: boolean) =>
-    `rounded-full border px-4 py-1.5 text-sm font-semibold ${on ? 'border-navy-800 bg-navy-800 text-white' : 'border-navy-300 text-navy-800 hover:border-navy-600'}`
+    `rounded-full border px-4 py-2 text-sm font-semibold ${on ? 'border-navy-800 bg-navy-800 text-white' : 'border-navy-300 text-navy-800 hover:border-navy-600'}`
 
   return (
     <>
@@ -92,7 +92,7 @@ export default function CandidatesPage({ searchParams }: { searchParams: Params 
             <p className="mb-4 text-sm text-navy-600" aria-live="polite">
               {filtered.length === 0 ? l.none : l.count(nf(filtered.length), page, pages)}
             </p>
-            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-5 xl:grid-cols-4">
               {shown.map((c) => <CandidateCard key={c.slug} candidate={c} />)}
             </div>
 

@@ -63,7 +63,7 @@ export default function CandidatePage({ params }: { params: { slug: string } }) 
     <>
       <div className="border-b border-cream-300 bg-cream-50">
         <div className="container-max grid gap-8 py-10 sm:py-14 md:grid-cols-3 md:items-center">
-          <div className="md:col-span-2">
+          <div className="order-2 md:order-none md:col-span-2">
             <p className="eyebrow">{p.eyebrow} · {c.office}{c.position ? ` (${c.position})` : ''}{c.locality ? ` · ${c.locality}` : ''}{c.department ? ` · ${c.department}` : ''}{c.affiliation ? ` · ${c.affiliation}` : ''}</p>
             <h1 className="mt-2 text-4xl font-bold text-navy-900 sm:text-5xl">{c.name}</h1>
             <div className="mt-5"><StatusBadge status={c.status} /></div>
@@ -73,7 +73,7 @@ export default function CandidatePage({ params }: { params: { slug: string } }) 
             </p>
             <ShareButtons text={t.share.profile(c.name)} className="mt-5" />
           </div>
-          <figure className="mx-auto w-full max-w-[14rem] md:mx-0 md:ml-auto">
+          <figure className="order-1 mx-auto w-full max-w-[10rem] md:order-none md:max-w-[14rem] md:mx-0 md:ml-auto">
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-cream-300 bg-navy-100">
               {c.photo ? (
                 <Image src={c.photo} alt={t.hero.photoAlt(c.name)} fill sizes="224px" className="object-cover" />
@@ -97,7 +97,7 @@ export default function CandidatePage({ params }: { params: { slug: string } }) 
           {c.education.length + c.career.length === 0 ? pending(p.bioPending) : null}
           <table className="mt-3 w-full text-left text-sm">
             <tbody>
-              <tr className="border-t border-cream-300"><th className={`${td} w-48 font-semibold`}>{p.career}</th><td className="py-2">{c.career.length ? c.career.join(' · ') : nd()}</td></tr>
+              <tr className="border-t border-cream-300"><th className={`${td} w-28 font-semibold sm:w-48`}>{p.career}</th><td className="py-2">{c.career.length ? c.career.join(' · ') : nd()}</td></tr>
               <tr className="border-t border-cream-300"><th className={`${td} font-semibold`}>{p.education}</th><td className="py-2">{c.education.length ? c.education.join(' · ') : nd()}</td></tr>
               <tr className="border-t border-cream-300"><th className={`${td} font-semibold`}>{p.party}</th><td className="py-2">{c.affiliation ?? nd()} <span className="text-xs text-navy-500">{p.abbrevNote}</span></td></tr>
               <tr className="border-t border-cream-300"><th className={`${td} font-semibold`}>{p.links}</th><td className="py-2">{c.officialLinks?.length ? c.officialLinks.map((l) => <span key={l.url} className="mr-3"><Src s={l} /></span>) : pending(p.linksPending)}</td></tr>

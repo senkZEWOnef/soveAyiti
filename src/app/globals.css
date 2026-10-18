@@ -7,7 +7,8 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-cream-100 font-sans text-navy-900 antialiased;
+    @apply overflow-x-hidden bg-cream-100 font-sans text-navy-900 antialiased;
+    -webkit-tap-highlight-color: transparent;
   }
   h1, h2, h3, h4 {
     @apply font-serif tracking-tight;
@@ -43,7 +44,7 @@
     @apply text-xs font-bold uppercase tracking-widest text-flag-600;
   }
   .input {
-    @apply w-full rounded-lg border border-cream-300 bg-white px-4 py-3 text-sm text-navy-900 placeholder:text-navy-400;
+    @apply w-full rounded-lg border border-cream-300 bg-white px-4 py-3 text-base text-navy-900 placeholder:text-navy-400 sm:text-sm;
   }
   .prose-article p {
     @apply mb-5 text-lg leading-relaxed text-navy-800;
