@@ -20,12 +20,12 @@ const LS_KEY = 'sa_voted'
 // Haiti's calendar day, same rule as the server (src/lib/voteGuard.ts).
 const haitiDay = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Port-au-Prince' }).format(new Date())
 
-function rememberVote(slug: string) {
-  try { localStorage.setItem(LS_KEY, `${haitiDay()}:${slug}`) } catch { /* private mode: the cookie still works */ }
+function rememberVote(key: string, slug: string) {
+  try { localStorage.setItem(key, `${haitiDay()}:${slug}`) } catch { /* private mode: the cookie still works */ }
 }
-function recallVote(valid: string[]): string | null {
+function recallVote(key: string, valid: string[]): string | null {
   try {
-    const [day, slug] = (localStorage.getItem(LS_KEY) ?? '').split(':')
+    const [day, slug] = (localStorage.getItem(key) ?? '').split(':')
     return day === haitiDay() && valid.includes(slug) ? slug : null
   } catch {
     return null
@@ -38,11 +38,17 @@ export default function VoteBoard({
   candidates,
   initialCounts,
   initialVoted,
+  poll = 'president',
+  profileBase = '/kandida',
 }: {
   candidates: PollCandidate[]
   initialCounts: Record<string, number>
   initialVoted: string | null
+  /** which poll this board votes in (see src/lib/polls.ts) */
+  poll?: string
+  profileBase?: string
 }) {
+  const lsKey = poll === 'president' ? LS_KEY : `${LS_KEY}_${poll}`
   const t = useT()
   const lang = useLang()
   const nf = (n: number) => n.toLocaleString(lang === 'en' ? 'en-US' : 'fr-FR')
@@ -63,7 +69,7 @@ export default function VoteBoard({
     if (data.counts) setCounts(data.counts)
     if (data.voted) {
       setVoted(data.voted)
-      rememberVote(data.voted)
+      rememberVote(lsKey, data.voted)
     }
     if (typeof data.resetIn === 'number') setResetIn(data.resetIn)
   }
@@ -72,14 +78,14 @@ export default function VoteBoard({
   // Then keep the results fresh while the tab is visible.
   useEffect(() => {
     if (!initialVoted) {
-      const mine = recallVote(slugs)
+      const mine = recallVote(lsKey, slugs)
       if (mine) setVoted(mine)
     }
     let alive = true
     const refresh = async () => {
       if (document.visibilityState !== 'visible') return
       try {
-        const res = await fetch('/api/vote', { cache: 'no-store' })
+        const res = await fetch(`/api/vote?poll=${poll}`, { cache: 'no-store' })
         if (alive && res.ok) apply(await res.json())
       } catch { /* offline: keep what we have */ }
     }
@@ -98,7 +104,7 @@ export default function VoteBoard({
     setPending(c.slug)
     setProblem(null)
     try {
-      const res = await fetch('/api/vote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ slug: c.slug }) })
+      const res = await fetch('/api/vote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ slug: c.slug, poll }) })
       const data = await res.json().catch(() => ({}))
       if (res.ok) {
         apply(data)
@@ -108,7 +114,7 @@ export default function VoteBoard({
         if (data.error === 'ip') setProblem('ip')
         else {
           setProblem('already')
-          if (!data.voted) setVoted(recallVote(slugs) ?? c.slug) // device already used today: lock the buttons
+          if (!data.voted) setVoted(recallVote(lsKey, slugs) ?? c.slug) // device already used today: lock the buttons
         }
       } else {
         setProblem('failed')
@@ -172,7 +178,7 @@ export default function VoteBoard({
                   >
                     {pending === c.slug ? '…' : mine ? t.vote.votedBadge : locked ? t.vote.votedLabel : t.vote.vote}
                   </button>
-                  <Link href={`/kandida/${c.slug}`} className="mt-1 py-2 text-center text-xs text-navy-600 underline hover:text-flag-600">
+                  <Link href={`${profileBase}/${c.slug}`} className="mt-1 py-2 text-center text-xs text-navy-600 underline hover:text-flag-600">
                     {t.vote.seeProfile}
                   </Link>
                 </div>

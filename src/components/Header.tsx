@@ -29,11 +29,16 @@ export function Logo({ light = false }: { light?: boolean }) {
 export default function Header() {
   const [open, setOpen] = useState(false)
   const t = useT()
+  // `desktop: false` items live only in the phone menu (and the footer) so the desktop bar stays readable.
   const navigation = [
-    { name: t.nav.candidates, href: '/kandida' },
-    { name: t.nav.vote, href: '/vote' },
-    { name: t.nav.explain, href: '/eksplike' },
-    { name: t.nav.about, href: '/apwopo' },
+    { name: t.nav.candidates, href: '/kandida', desktop: true },
+    { name: t.nav.vote, href: '/vote', desktop: true },
+    { name: t.nav.guide, href: '/gid-elekte', desktop: false },
+    { name: t.nav.sports, href: '/espo', desktop: true },
+    { name: t.nav.culture, href: '/kilti', desktop: true },
+    { name: t.nav.verify, href: '/verifye', desktop: true },
+    { name: t.nav.explain, href: '/eksplike', desktop: false },
+    { name: t.nav.about, href: '/apwopo', desktop: true },
   ]
 
   return (
@@ -43,13 +48,13 @@ export default function Header() {
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex" aria-label={t.nav.main}>
-          {navigation.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm font-medium text-navy-700 hover:text-flag-600">
+        <nav className="hidden items-center gap-4 lg:gap-6 md:flex" aria-label={t.nav.main}>
+          {navigation.filter((item) => item.desktop).map((item) => (
+            <Link key={item.href} href={item.href} className="whitespace-nowrap text-sm font-medium text-navy-700 hover:text-flag-600">
               {item.name}
             </Link>
           ))}
-          <Link href="/abonnman" className="btn-primary !py-2">
+          <Link href="/abonnman" className="btn-primary hidden !py-2 lg:inline-flex">
             {t.nav.digest}
           </Link>
           <LanguageSwitcher />

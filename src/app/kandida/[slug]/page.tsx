@@ -9,6 +9,7 @@ import { showPublicRecord } from '@/data/site'
 import { getT } from '@/i18n/server'
 import { localizeCandidate } from '@/i18n/content'
 import ShareButtons from '@/components/ShareButtons'
+import { getTools } from '@/i18n/tools'
 import type { SourceLink } from '@/types'
 
 export function generateStaticParams() {
@@ -72,6 +73,9 @@ export default function CandidatePage({ params }: { params: { slug: string } }) 
               {p.source} <Src s={c.statusSource} /> · {p.lastUpdated} {formatDate(c.lastReviewed, lang)}
             </p>
             <ShareButtons text={t.share.profile(c.name)} className="mt-5" />
+            {c.officeKey === 'president' && (
+              <Link href={`/konpare?a=${c.slug}`} className="btn-outline mt-4">{getTools().compare.cta}</Link>
+            )}
           </div>
           <figure className="order-1 mx-auto w-full max-w-[10rem] md:order-none md:max-w-[14rem] md:mx-0 md:ml-auto">
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-cream-300 bg-navy-100">

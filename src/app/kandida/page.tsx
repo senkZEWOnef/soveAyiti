@@ -5,6 +5,7 @@ import { CandidateCard, ElectionNotice, PageHeader, StatusBadge } from '@/compon
 import { formatDate } from '@/lib/utils'
 import { REGISTRATION_SNAPSHOT } from '@/data/candidates'
 import { getT } from '@/i18n/server'
+import { getTools } from '@/i18n/tools'
 import type { OfficeKey } from '@/types'
 
 export function generateMetadata(): Metadata {
@@ -84,7 +85,7 @@ export default function CandidatesPage({ searchParams }: { searchParams: Params 
               {filtering && <Link href="/kandida" className="btn-outline">{l.reset}</Link>}
             </div>
           </div>
-          <p className="mt-3 text-xs text-navy-500">{l.presidentNote}</p>
+          <p className="mt-3 text-xs text-navy-500">{l.presidentNote} <Link href="/konpare" className="font-semibold underline">{getTools().compare.cta}</Link></p>
         </form>
 
         <div className="grid gap-8 lg:grid-cols-4">

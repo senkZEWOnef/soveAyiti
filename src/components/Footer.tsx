@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { site } from '@/data/site'
 import { Logo } from './Header'
 import { getT } from '@/i18n/server'
+import { getTools } from '@/i18n/tools'
 
 const socials: { key: keyof typeof site.social; label: string }[] = [
   { key: 'facebook', label: 'Facebook' },
@@ -28,8 +29,12 @@ export default function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href="/kandida" className="hover:text-white">{t.footer.candidates}</Link></li>
             <li><Link href="/eksplike" className="hover:text-white">{t.footer.explain}</Link></li>
+            <li><Link href="/gid-elekte" className="hover:text-white">{t.nav.guide}</Link></li>
+            <li><Link href="/verifye" className="hover:text-white">{t.nav.verify}</Link></li>
+            <li><Link href="/konpare" className="hover:text-white">{getTools().compare.title}</Link></li>
             <li><Link href="/kilti" className="hover:text-white">{t.footer.culture}</Link></li>
             <li><Link href="/espo" className="hover:text-white">{t.footer.sports}</Link></li>
+            <li><Link href="/espo/atlet" className="hover:text-white">{t.athletes.hubTitle}</Link></li>
           </ul>
         </div>
 

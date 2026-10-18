@@ -1,0 +1,820 @@
+{
+ "fetchedAt": "2026-10-18",
+ "source": "https://www.wikidata.org/",
+ "artists": {
+  "tabou-combo": {
+   "qid": "Q3513534",
+   "name": "Tabou Combo",
+   "kind": "group",
+   "types": [
+    "musical group"
+   ],
+   "description": {
+    "en": "Haitian Band"
+   },
+   "birth": "1968",
+   "birthIsFormation": true,
+   "birthPlace": "Pétion-Ville",
+   "citizenship": [],
+   "countryOfOrigin": [],
+   "occupations": [],
+   "genres": [
+    "konpa"
+   ],
+   "instruments": [],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [
+    "Élysée Pyronneau"
+   ],
+   "pseudonyms": [],
+   "website": "http://www.taboucombo.com/",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Tabou_Combo",
+    "fr": "https://fr.wikipedia.org/wiki/Tabou_Combo",
+    "ht": "https://ht.wikipedia.org/wiki/Tabou_Combo"
+   },
+   "commons": {
+    "path": "/artists/tabou-combo.jpg",
+    "credit": "Didier Moïse · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Tabou_Combo_at_the_2014_Festival_International_Nuits_d%27Afrique_in_Montr%C3%A9al_(1-3).jpg"
+   }
+  },
+  "carimi": {
+   "qid": "Q2938788",
+   "name": "Carimi",
+   "kind": "group",
+   "types": [
+    "musical group"
+   ],
+   "description": {
+    "en": "Haitian band",
+    "fr": "groupe haïtien de musique kompa"
+   },
+   "birth": "2001",
+   "birthIsFormation": true,
+   "birthPlace": "New York",
+   "citizenship": [],
+   "countryOfOrigin": [
+    "Haiti"
+   ],
+   "occupations": [],
+   "genres": [
+    "konpa"
+   ],
+   "instruments": [],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "website": "http://www.carimi.com/",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Carimi",
+    "fr": "https://fr.wikipedia.org/wiki/Carimi",
+    "ht": "https://ht.wikipedia.org/wiki/Carimi"
+   },
+   "commons": {
+    "path": "/artists/carimi.jpg",
+    "credit": "Lionell Charles · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:CarimiSaba1.jpg"
+   }
+  },
+  "t-vice": {
+   "qid": "Q12897581",
+   "name": "T-Vice",
+   "kind": "group",
+   "types": [
+    "musical group"
+   ],
+   "description": {
+    "en": "Haitian compas band"
+   },
+   "birth": "1992",
+   "birthIsFormation": true,
+   "birthPlace": "Port-au-Prince",
+   "citizenship": [],
+   "countryOfOrigin": [],
+   "occupations": [],
+   "genres": [
+    "konpa"
+   ],
+   "instruments": [],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/T-Vice",
+    "ht": "https://ht.wikipedia.org/wiki/T-Vice"
+   }
+  },
+  "djakout-mizik": {
+   "qid": "Q3032741",
+   "name": "Djakout Mizik",
+   "kind": "group",
+   "types": [
+    "musical group"
+   ],
+   "description": {
+    "en": "Haitian compas band",
+    "fr": "groupe de musique"
+   },
+   "birthIsFormation": false,
+   "birthPlace": "Haiti",
+   "citizenship": [],
+   "countryOfOrigin": [
+    "Haiti"
+   ],
+   "occupations": [],
+   "genres": [
+    "konpa"
+   ],
+   "instruments": [],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Djakout_Mizik",
+    "fr": "https://fr.wikipedia.org/wiki/Djakout_Number_One",
+    "ht": "https://ht.wikipedia.org/wiki/Djakout_Mizik"
+   }
+  },
+  "boukman-eksperyans": {
+   "qid": "Q11182116",
+   "name": "Boukman Eksperyans",
+   "kind": "group",
+   "types": [
+    "musical group"
+   ],
+   "description": {
+    "en": "Haitian musical group"
+   },
+   "birthIsFormation": false,
+   "birthPlace": "Port-au-Prince",
+   "citizenship": [],
+   "countryOfOrigin": [
+    "Haiti"
+   ],
+   "occupations": [],
+   "genres": [],
+   "instruments": [],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Boukman_Eksperyans",
+    "ht": "https://ht.wikipedia.org/wiki/Boukman_Eksperyans"
+   },
+   "commons": {
+    "path": "/artists/boukman-eksperyans.jpg",
+    "credit": "Vkpascal · CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Theodore_Lolo_Beabrun,_Lead_Singer.JPG"
+   }
+  },
+  "emeline-michel": {
+   "qid": "Q5370358",
+   "name": "Emeline Michel",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian singer",
+    "fr": "chanteuse de variétés antillaises"
+   },
+   "birth": "1967",
+   "birthIsFormation": false,
+   "gender": "male",
+   "birthPlace": "Gonaïves",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "singer-songwriter",
+    "singer",
+    "composer"
+   ],
+   "genres": [
+    "twoubadou"
+   ],
+   "instruments": [
+    "voice"
+   ],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "website": "http://www.emeline-michel.com",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Emeline_Michel",
+    "fr": "https://fr.wikipedia.org/wiki/%C3%89meline_Michel",
+    "ht": "https://ht.wikipedia.org/wiki/Emeline_Michel"
+   },
+   "commons": {
+    "path": "/artists/emeline-michel.jpg",
+    "credit": "Didier Moïse · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%C3%89meline_Michel_at_the_2019_Haiti_En_Folie_and_Just_For_Laughs_festivals_in_Montr%C3%A9al_(3-4).jpg"
+   }
+  },
+  "wyclef-jean": {
+   "qid": "Q202663",
+   "name": "Wyclef Jean",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian rapper (born 1969)",
+    "fr": "rappeur haïtien"
+   },
+   "birth": "1969-10-17",
+   "birthIsFormation": false,
+   "gender": "female",
+   "birthPlace": "Croix-des-Bouquets",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "rapper",
+    "singer",
+    "songwriter",
+    "record producer",
+    "guitarist",
+    "actor",
+    "composer",
+    "musician"
+   ],
+   "genres": [
+    "East Coast hip-hop",
+    "reggae fusion",
+    "contemporary R&B",
+    "pop rap",
+    "neo soul",
+    "reggae",
+    "soul",
+    "HT-Pop"
+   ],
+   "instruments": [
+    "voice",
+    "guitar"
+   ],
+   "voiceType": [],
+   "memberOf": [
+    "Fugees",
+    "Refugee Camp All-Stars"
+   ],
+   "members": [],
+   "pseudonyms": [
+    "Wyclef",
+    "Toussaint St. Jean",
+    "Nel",
+    "Clef"
+   ],
+   "website": "https://www.wyclef.com/",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Wyclef_Jean",
+    "fr": "https://fr.wikipedia.org/wiki/Wyclef_Jean",
+    "ht": "https://ht.wikipedia.org/wiki/Wyclef_Jean"
+   },
+   "commons": {
+    "path": "/artists/wyclef-jean.jpg",
+    "credit": "Amy Martin Photography · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Wyclef_Jean_at_SXSW_London_2025.jpg"
+   }
+  },
+  "michel-martelly": {
+   "qid": "Q57512",
+   "name": "Joseph Michel Martelly",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Musician and former President of Haiti",
+    "fr": "musicien et homme politique haïtien"
+   },
+   "birth": "1961-02-12",
+   "birthIsFormation": false,
+   "gender": "female",
+   "birthPlace": "Port-au-Prince",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "politician",
+    "musician",
+    "singer-songwriter"
+   ],
+   "genres": [
+    "konpa"
+   ],
+   "instruments": [],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [
+    "Sweet Micky"
+   ],
+   "website": "http://martellyhaiti.com/",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Michel_Martelly",
+    "fr": "https://fr.wikipedia.org/wiki/Michel_Martelly",
+    "ht": "https://ht.wikipedia.org/wiki/Michel_Martelly"
+   },
+   "commons": {
+    "path": "/artists/michel-martelly.jpg",
+    "credit": "US Department of State · Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Michel_Martelly_on_April_20,_2011.jpg"
+   }
+  },
+  "nemours-jean-baptiste": {
+   "qid": "Q3709714",
+   "name": "Nemours Jean Baptiste",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian saxophonist (1918–1985)"
+   },
+   "birth": "1918-02-02",
+   "birthIsFormation": false,
+   "death": "1985-05-18",
+   "gender": "female",
+   "birthPlace": "Port-au-Prince",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "writer",
+    "musician",
+    "conductor"
+   ],
+   "genres": [
+    "konpa"
+   ],
+   "instruments": [
+    "saxophone"
+   ],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Nemours_Jean-Baptiste",
+    "ht": "https://ht.wikipedia.org/wiki/Nemours_Jean_Baptiste"
+   }
+  },
+  "coupe-cloue": {
+   "qid": "Q2603942",
+   "name": "Coupé Cloué",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haïtian footballer, singer, guitarist, and bandleader (1925-1998)",
+    "fr": "footballeur haïtien"
+   },
+   "birth": "1925-05-10",
+   "birthIsFormation": false,
+   "death": "1998-01-29",
+   "gender": "female",
+   "birthPlace": "Léogâne",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "association football player",
+    "singer",
+    "guitarist",
+    "bandleader"
+   ],
+   "genres": [
+    "konpa"
+   ],
+   "instruments": [
+    "guitar",
+    "voice"
+   ],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Coup%C3%A9_Clou%C3%A9",
+    "fr": "https://fr.wikipedia.org/wiki/Coup%C3%A9_Clou%C3%A9",
+    "ht": "https://ht.wikipedia.org/wiki/Coupe_Cloue"
+   }
+  },
+  "beethova-obas": {
+   "qid": "Q2893697",
+   "name": "Beethova Obas",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian musician",
+    "fr": "musicien haïtien"
+   },
+   "birth": "1964",
+   "birthIsFormation": false,
+   "gender": "female",
+   "birthPlace": "Haiti",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "musician"
+   ],
+   "genres": [],
+   "instruments": [
+    "voice"
+   ],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Beethova_Obas",
+    "fr": "https://fr.wikipedia.org/wiki/Beethova_Obas",
+    "ht": "https://ht.wikipedia.org/wiki/Beethova_Obas"
+   },
+   "commons": {
+    "path": "/artists/beethova-obas.jpg",
+    "credit": "VOA · Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Beethova_Obas_2022.jpg"
+   }
+  },
+  "mikaben": {
+   "qid": "Q114690061",
+   "name": "Michael Benjamin",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian singer, songwriter and producer",
+    "fr": "chanteur, compositeur et producteur de musique haïtien"
+   },
+   "birth": "1981-06-27",
+   "birthIsFormation": false,
+   "death": "2022-10-15",
+   "gender": "female",
+   "birthPlace": "Port-au-Prince Arrondissement",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "singer",
+    "guitarist",
+    "record producer",
+    "composer"
+   ],
+   "genres": [
+    "konpa",
+    "zouk",
+    "dancehall"
+   ],
+   "instruments": [],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [
+    "Mika"
+   ],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Mikaben",
+    "fr": "https://fr.wikipedia.org/wiki/Michael_Benjamin",
+    "ht": "https://ht.wikipedia.org/wiki/Mikaben"
+   }
+  },
+  "rutshelle-guillaume": {
+   "qid": "Q91054686",
+   "name": "Rutshelle Guillaume",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian singer",
+    "fr": "chanteuse haïtienne"
+   },
+   "birth": "1988-07-28",
+   "birthIsFormation": false,
+   "gender": "male",
+   "birthPlace": "Port-au-Prince",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "singer"
+   ],
+   "genres": [
+    "zouk",
+    "konpa",
+    "HT-Pop"
+   ],
+   "instruments": [],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "website": "http://rutshellemusic.com/",
+   "wikipedia": {
+    "fr": "https://fr.wikipedia.org/wiki/Rutshelle",
+    "ht": "https://ht.wikipedia.org/wiki/Rutshelle_Guillaume"
+   }
+  },
+  "ludovic-lamothe": {
+   "qid": "Q555155",
+   "name": "Ludovic Lamothe",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian composer and virtuoso pianist (1882–1953)",
+    "fr": "pianiste et compositeur haïtien"
+   },
+   "birth": "1882-05-12",
+   "birthIsFormation": false,
+   "death": "1953-04-04",
+   "gender": "female",
+   "birthPlace": "Port-au-Prince",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "composer",
+    "pianist"
+   ],
+   "genres": [
+    "classical music"
+   ],
+   "instruments": [
+    "piano"
+   ],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Ludovic_Lamothe",
+    "fr": "https://fr.wikipedia.org/wiki/Ludovic_Lamothe",
+    "ht": "https://ht.wikipedia.org/wiki/Ludovic_Lamothe"
+   },
+   "commons": {
+    "path": "/artists/ludovic-lamothe.jpg",
+    "credit": "Unknown authorUnknown author · Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Ludovic_Lamothe.jpg"
+   }
+  },
+  "occide-jeanty": {
+   "qid": "Q1506820",
+   "name": "Occide Jeanty",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian composer and conductor (1860-1936)"
+   },
+   "birth": "1860",
+   "birthIsFormation": false,
+   "death": "1936",
+   "gender": "female",
+   "birthPlace": "Port-au-Prince",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "composer",
+    "conductor",
+    "pianist"
+   ],
+   "genres": [],
+   "instruments": [
+    "piano"
+   ],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Occide_Jeanty",
+    "fr": "https://fr.wikipedia.org/wiki/Occide_Jeanty",
+    "ht": "https://ht.wikipedia.org/wiki/Occide_Jeanty"
+   }
+  },
+  "jowee-omicil": {
+   "qid": "Q80112511",
+   "name": "Jowee Omicil",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian-Canadian jazz musician",
+    "fr": "saxophoniste et compositeur de jazz canadien"
+   },
+   "birth": "1977-12-01",
+   "birthIsFormation": false,
+   "gender": "female",
+   "birthPlace": "Montreal",
+   "citizenship": [
+    "Canada"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "jazz saxophonist",
+    "composer",
+    "jazz musician",
+    "singer",
+    "musician"
+   ],
+   "genres": [],
+   "instruments": [
+    "saxophone"
+   ],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Jowee_Omicil"
+   }
+  },
+  "manno-charlemagne": {
+   "qid": "Q2031705",
+   "name": "Manno Charlemagne",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian politician and musician (1948–2017)"
+   },
+   "birth": "1948-04-14",
+   "birthIsFormation": false,
+   "death": "2017-12-10",
+   "gender": "female",
+   "birthPlace": "Port-au-Prince",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "singer-songwriter",
+    "composer",
+    "politician",
+    "singer",
+    "Liedermacher"
+   ],
+   "genres": [
+    "twoubadou"
+   ],
+   "instruments": [
+    "guitar"
+   ],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Manno_Charlemagne",
+    "fr": "https://fr.wikipedia.org/wiki/Manno_Charlemagne",
+    "ht": "https://ht.wikipedia.org/wiki/Manno_Charlemagne"
+   },
+   "commons": {
+    "path": "/artists/manno-charlemagne.jpg",
+    "credit": "Smalagodi · CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Manno_3.jpg"
+   }
+  },
+  "toto-bissainthe": {
+   "qid": "Q2188782",
+   "name": "Toto Bissainthe",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian singer, songwriter and actress (1934–1994)",
+    "fr": "chanteuse, compositrice et comédienne haïtienne"
+   },
+   "birth": "1934",
+   "birthIsFormation": false,
+   "death": "1994-06-04",
+   "gender": "male",
+   "birthPlace": "Cap-Haïtien",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "actor",
+    "singer"
+   ],
+   "genres": [],
+   "instruments": [
+    "voice"
+   ],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [
+    "Toto"
+   ],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Toto_Bissainthe",
+    "fr": "https://fr.wikipedia.org/wiki/Toto_Bissainthe",
+    "ht": "https://ht.wikipedia.org/wiki/Toto_Bissainthe"
+   }
+  },
+  "master-dji": {
+   "qid": "Q6785018",
+   "name": "Master Dji",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian rapper and hip-hop artist"
+   },
+   "birth": "1961-05-30",
+   "birthIsFormation": false,
+   "death": "1994-05-21",
+   "gender": "female",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "rapper"
+   ],
+   "genres": [],
+   "instruments": [
+    "voice"
+   ],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [
+    "Master Dji"
+   ],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Master_Dji"
+   }
+  },
+  "ansy-derose": {
+   "qid": "Q16021036",
+   "name": "Ansy Derose",
+   "kind": "person",
+   "types": [
+    "human"
+   ],
+   "description": {
+    "en": "Haitian singer (1934-1998)",
+    "fr": "auteur-compositeur-interprète haïtien"
+   },
+   "birth": "1934-06-03",
+   "birthIsFormation": false,
+   "death": "1998-01-17",
+   "gender": "female",
+   "birthPlace": "Port-au-Prince",
+   "citizenship": [
+    "Haiti"
+   ],
+   "countryOfOrigin": [],
+   "occupations": [
+    "singer-songwriter"
+   ],
+   "genres": [
+    "twoubadou"
+   ],
+   "instruments": [],
+   "voiceType": [],
+   "memberOf": [],
+   "members": [],
+   "pseudonyms": [],
+   "wikipedia": {
+    "fr": "https://fr.wikipedia.org/wiki/Ansy_D%C3%A9rose",
+    "ht": "https://ht.wikipedia.org/wiki/Ansy_D%C3%A9rose"
+   }
+  }
+ }
+}

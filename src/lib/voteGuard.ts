@@ -1,7 +1,7 @@
 import 'server-only'
 import { createHmac } from 'node:crypto'
 import { cookies } from 'next/headers'
-import { pollSlugs } from './votes'
+import { pollSlugsFor, type PollId } from './polls'
 
 // One vote per person per day (Haiti time). Layers, strongest first:
 //  1. Cookie (`sa_vote` = "<day>:<slug>"): stops the normal visitor from voting twice, survives page reloads.
@@ -13,6 +13,8 @@ import { pollSlugs } from './votes'
 // Nothing can stop a determined person with many SIM cards / VPNs: this is an informal poll, not an election.
 
 export const VOTE_COOKIE = 'sa_vote'
+/** president keeps the original cookie name; other polls get their own so each has its own daily vote */
+export const cookieName = (poll: PollId = 'president') => (poll === 'president' ? VOTE_COOKIE : `${VOTE_COOKIE}_${poll}`)
 export const IP_DAILY_CAP = 8
 const TZ = 'America/Port-au-Prince'
 
@@ -43,16 +45,16 @@ export function clientIp(req: Request): string {
 }
 
 /** The slug this browser already voted for today, from the cookie, or null. */
-export function votedToday(): string | null {
-  const v = cookies().get(VOTE_COOKIE)?.value
+export function votedToday(poll: PollId = 'president'): string | null {
+  const v = cookies().get(cookieName(poll))?.value
   if (!v) return null
   const [day, slug] = v.split(':')
-  return day === dayKey() && pollSlugs.includes(slug) ? slug : null
+  return day === dayKey() && pollSlugsFor(poll).includes(slug) ? slug : null
 }
 
-export function voteCookie(slug: string) {
+export function voteCookie(slug: string, poll: PollId = 'president') {
   return {
-    name: VOTE_COOKIE,
+    name: cookieName(poll),
     value: `${dayKey()}:${slug}`,
     maxAge: secondsUntilReset(),
     path: '/',
@@ -105,17 +107,18 @@ async function purgeOldDays(day: string) {
 
 export type GuardResult = { ok: true; release: () => Promise<void> } | { ok: false; reason: 'device' | 'ip' }
 
-export async function allowVote(req: Request): Promise<GuardResult> {
+export async function allowVote(req: Request, poll: PollId = 'president'): Promise<GuardResult> {
   const day = dayKey()
+  const ns = poll === 'president' ? '' : `${poll}/`
   const ip = clientIp(req)
   const ua = req.headers.get('user-agent') ?? ''
-  const deviceKey = `${day}/d/${hmac(day, ip, ua)}`
+  const deviceKey = `${day}/d/${ns}${hmac(day, ip, ua)}`
   if (!(await claim(deviceKey))) return { ok: false, reason: 'device' }
 
-  const ipHash = hmac(day, 'ip', ip)
+  const ipHash = hmac(day, 'ip', ip, ...(poll === 'president' ? [] : [poll]))
   let ipKey: string | null = null
   for (let n = 1; n <= IP_DAILY_CAP && !ipKey; n++) {
-    const k = `${day}/i/${ipHash}/${n}`
+    const k = `${day}/i/${ns}${ipHash}/${n}`
     if (await claim(k)) ipKey = k
   }
   if (!ipKey) {

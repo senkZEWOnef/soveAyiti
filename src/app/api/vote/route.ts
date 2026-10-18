@@ -1,13 +1,16 @@
 import { NextResponse } from 'next/server'
-import { addVote, getCounts, pollSlugs } from '@/lib/votes'
+import { addVote, getCounts } from '@/lib/votes'
+import { isPollId, pollSlugsFor, type PollId } from '@/lib/polls'
 import { allowVote, secondsUntilReset, voteCookie, votedToday } from '@/lib/voteGuard'
 
 export const dynamic = 'force-dynamic'
 
 const noStore = { 'Cache-Control': 'no-store' }
+const pollOf = (v: unknown): PollId => (isPollId(v) ? v : 'president')
 
-export async function GET() {
-  return NextResponse.json({ counts: await getCounts(), voted: votedToday(), resetIn: secondsUntilReset() }, { headers: noStore })
+export async function GET(req: Request) {
+  const poll = pollOf(new URL(req.url).searchParams.get('poll'))
+  return NextResponse.json({ counts: await getCounts(poll), voted: votedToday(poll), resetIn: secondsUntilReset() }, { headers: noStore })
 }
 
 export async function POST(req: Request) {
@@ -19,32 +22,35 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'forbidden' }, { status: 403 })
   }
   let slug: unknown
+  let poll: PollId
   try {
-    slug = (await req.json()).slug
+    const body = await req.json()
+    slug = body.slug
+    poll = pollOf(body.poll)
   } catch {
     return NextResponse.json({ error: 'bad request' }, { status: 400 })
   }
-  if (typeof slug !== 'string' || !pollSlugs.includes(slug)) {
+  if (typeof slug !== 'string' || !pollSlugsFor(poll).includes(slug)) {
     return NextResponse.json({ error: 'unknown candidate' }, { status: 400 })
   }
 
-  const already = votedToday()
+  const already = votedToday(poll)
   if (already) {
-    return NextResponse.json({ error: 'already', voted: already, counts: await getCounts(), resetIn: secondsUntilReset() }, { status: 429, headers: noStore })
+    return NextResponse.json({ error: 'already', voted: already, counts: await getCounts(poll), resetIn: secondsUntilReset() }, { status: 429, headers: noStore })
   }
-  const guard = await allowVote(req)
+  const guard = await allowVote(req, poll)
   if (!guard.ok) {
-    return NextResponse.json({ error: guard.reason, counts: await getCounts(), resetIn: secondsUntilReset() }, { status: 429, headers: noStore })
+    return NextResponse.json({ error: guard.reason, counts: await getCounts(poll), resetIn: secondsUntilReset() }, { status: 429, headers: noStore })
   }
 
   let counts
   try {
-    counts = await addVote(slug)
+    counts = await addVote(slug, poll)
   } catch (e) {
     await guard.release() // the vote did not count, so do not burn the voter's turn
     throw e
   }
   const res = NextResponse.json({ counts, voted: slug, resetIn: secondsUntilReset() }, { headers: noStore })
-  res.cookies.set(voteCookie(slug))
+  res.cookies.set(voteCookie(slug, poll))
   return res
 }

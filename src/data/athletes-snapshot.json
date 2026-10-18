@@ -1,0 +1,974 @@
+{
+ "fetchedAt": "2026-10-18",
+ "source": "https://www.wikidata.org/",
+ "athletes": {
+  "duckens-nazon": {
+   "qid": "Q16916422",
+   "name": "Duckens Nazon",
+   "birth": "1994-04-07",
+   "gender": "female",
+   "birthPlace": "Châtenay-Malabry",
+   "citizenship": [
+    "Haiti",
+    "France"
+   ],
+   "sports": [
+    "association football"
+   ],
+   "positions": [
+    "forward"
+   ],
+   "heightCm": 181,
+   "clubs": [
+    {
+     "id": "Q3351700",
+     "name": "Olympique Saint-Quentin",
+     "national": false,
+     "from": "2014",
+     "to": "2015",
+     "caps": 13,
+     "goals": 10
+    },
+    {
+     "id": "Q760736",
+     "name": "Stade Lavallois",
+     "national": false,
+     "from": "2015",
+     "to": "2016",
+     "caps": 14,
+     "goals": 3
+    },
+    {
+     "id": "Q16842784",
+     "name": "Kerala Blasters FC",
+     "national": false,
+     "from": "2016",
+     "to": "2017",
+     "caps": 7,
+     "goals": 2
+    },
+    {
+     "id": "Q19500",
+     "name": "Wolverhampton Wanderers F.C.",
+     "national": false,
+     "from": "2017",
+     "to": "2018",
+     "caps": 0,
+     "goals": 0
+    },
+    {
+     "id": "Q19580",
+     "name": "Coventry City F.C.",
+     "national": false,
+     "from": "2017",
+     "to": "2017",
+     "caps": 21,
+     "goals": 6
+    },
+    {
+     "id": "Q19601",
+     "name": "Oldham Athletic A.F.C.",
+     "national": false,
+     "from": "2018",
+     "to": "2018",
+     "caps": 16,
+     "goals": 6
+    },
+    {
+     "id": "Q138248",
+     "name": "Sint-Truidense V.V.",
+     "national": false,
+     "from": "2018",
+     "to": "2021",
+     "caps": 28,
+     "goals": 6
+    },
+    {
+     "id": "Q319136",
+     "name": "St. Mirren F.C.",
+     "national": false,
+     "from": "2019",
+     "to": "2019",
+     "caps": 10,
+     "goals": 2
+    },
+    {
+     "id": "Q1465560",
+     "name": "US Quevilly",
+     "national": false,
+     "from": "2021",
+     "to": "2022",
+     "caps": 38,
+     "goals": 15
+    },
+    {
+     "id": "Q136433",
+     "name": "PFC CSKA Sofia",
+     "national": false,
+     "from": "2022",
+     "to": "2024",
+     "caps": 50,
+     "goals": 27
+    },
+    {
+     "id": "Q608122",
+     "name": "Kayserispor",
+     "national": false,
+     "from": "2024",
+     "to": "2025",
+     "caps": 46,
+     "goals": 11
+    },
+    {
+     "id": "Q455971",
+     "name": "Esteghlal F.C.",
+     "national": false,
+     "from": "2025",
+     "caps": 10,
+     "goals": 1
+    }
+   ],
+   "nationalTeams": [
+    {
+     "id": "Q236006",
+     "name": "Haiti men's national football team",
+     "national": true,
+     "from": "2014",
+     "caps": 82,
+     "goals": 44
+    }
+   ],
+   "currentClub": "Esteghlal F.C.",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Duckens_Nazon",
+    "fr": "https://fr.wikipedia.org/wiki/Duckens_Nazon"
+   },
+   "commons": {
+    "path": "/athletes/duckens-nazon.jpg",
+    "credit": "Fouad Ashtari · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:2025_Iran_Football_Premier_League_Esteghlal_and_Zob_Ahan_football_match_3_Mehr_(cropped).jpg"
+   }
+  },
+  "frantzdy-pierrot": {
+   "qid": "Q55820193",
+   "name": "Frantzdy Pierrot",
+   "birth": "1995-03-29",
+   "gender": "female",
+   "birthPlace": "Port-au-Prince",
+   "citizenship": [
+    "Haiti",
+    "United States"
+   ],
+   "sports": [
+    "association football"
+   ],
+   "positions": [
+    "forward"
+   ],
+   "heightCm": 194,
+   "clubs": [
+    {
+     "id": "Q7300584",
+     "name": "Reading United AC",
+     "national": false,
+     "from": "2017-05",
+     "to": "2017-06",
+     "caps": 2,
+     "goals": 1
+    },
+    {
+     "id": "Q642408",
+     "name": "Colorado Rapids",
+     "national": false,
+     "from": "2018-01",
+     "to": "2018-02",
+     "caps": 0,
+     "goals": 0
+    },
+    {
+     "id": "Q865735",
+     "name": "Royal Excelsior Mouscron",
+     "national": false,
+     "from": "2018-07",
+     "to": "2018-08",
+     "caps": 38,
+     "goals": 8
+    },
+    {
+     "id": "Q459148",
+     "name": "En Avant de Guingamp",
+     "national": false,
+     "from": "2019-08",
+     "to": "2022-06",
+     "caps": 76,
+     "goals": 28
+    },
+    {
+     "id": "Q2129100",
+     "name": "Maccabi Haifa F.C.",
+     "national": false,
+     "from": "2022-07",
+     "to": "2024-09",
+     "caps": 66,
+     "goals": 28
+    },
+    {
+     "id": "Q201584",
+     "name": "AEK Athens F.C.",
+     "national": false,
+     "from": "2024-09",
+     "caps": 37,
+     "goals": 8
+    },
+    {
+     "id": "Q272712",
+     "name": "Çaykur Rizespor",
+     "national": false,
+     "from": "2026-02",
+     "caps": 3,
+     "goals": 0
+    }
+   ],
+   "nationalTeams": [
+    {
+     "id": "Q236006",
+     "name": "Haiti men's national football team",
+     "national": true,
+     "from": "2018",
+     "caps": 47,
+     "goals": 33
+    }
+   ],
+   "currentClub": "Çaykur Rizespor",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Frantzdy_Pierrot",
+    "fr": "https://fr.wikipedia.org/wiki/Frantzdy_Pierrot"
+   }
+  },
+  "derrick-etienne-jr": {
+   "qid": "Q21005754",
+   "name": "Derrick Etienne Jr.",
+   "birth": "1996-11-25",
+   "gender": "female",
+   "birthPlace": "Richmond",
+   "citizenship": [
+    "Haiti",
+    "United States"
+   ],
+   "sports": [
+    "association football"
+   ],
+   "positions": [
+    "midfielder",
+    "forward"
+   ],
+   "heightCm": 178,
+   "clubs": [
+    {
+     "id": "Q18913672",
+     "name": "Red Bull New York II",
+     "national": false,
+     "from": "2015",
+     "to": "2015",
+     "caps": 14,
+     "goals": 3
+    },
+    {
+     "id": "Q204220",
+     "name": "Red Bull New York",
+     "national": false,
+     "from": "2016",
+     "to": "2019",
+     "caps": 60,
+     "goals": 6
+    },
+    {
+     "id": "Q18913672",
+     "name": "Red Bull New York II",
+     "national": false,
+     "from": "2016",
+     "to": "2019",
+     "caps": 38,
+     "goals": 10
+    },
+    {
+     "id": "Q20855983",
+     "name": "FC Cincinnati",
+     "national": false,
+     "from": "2019",
+     "to": "2019",
+     "caps": 5,
+     "goals": 0
+    },
+    {
+     "id": "Q457163",
+     "name": "Columbus Crew",
+     "national": false,
+     "from": "2020",
+     "to": "2022-12",
+     "caps": 96,
+     "goals": 12
+    },
+    {
+     "id": "Q16836317",
+     "name": "Atlanta United FC",
+     "national": false,
+     "from": "2023-01",
+     "to": "2024-04",
+     "caps": 25,
+     "goals": 0
+    },
+    {
+     "id": "Q47175799",
+     "name": "Atlanta United 2",
+     "national": false,
+     "from": "2023-09",
+     "to": "2024-04",
+     "caps": 3,
+     "goals": 0
+    },
+    {
+     "id": "Q327238",
+     "name": "Toronto FC",
+     "national": false,
+     "from": "2024-04",
+     "caps": 35,
+     "goals": 3
+    }
+   ],
+   "nationalTeams": [
+    {
+     "id": "Q3589794",
+     "name": "Haiti national under-17 football team",
+     "national": true,
+     "from": "2013",
+     "to": "2013",
+     "caps": 1,
+     "goals": 0
+    },
+    {
+     "id": "Q20807714",
+     "name": "Haiti national under-20 football team",
+     "national": true,
+     "from": "2015",
+     "to": "2015",
+     "caps": 3,
+     "goals": 0
+    },
+    {
+     "id": "Q20807715",
+     "name": "Haiti national under-23 football team",
+     "national": true,
+     "from": "2015",
+     "to": "2015",
+     "caps": 1,
+     "goals": 0
+    },
+    {
+     "id": "Q236006",
+     "name": "Haiti men's national football team",
+     "national": true,
+     "from": "2016",
+     "caps": 46,
+     "goals": 8
+    }
+   ],
+   "currentClub": "Toronto FC",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Derrick_Etienne_Jr.",
+    "fr": "https://fr.wikipedia.org/wiki/Derrick_Etienne"
+   },
+   "commons": {
+    "path": "/athletes/derrick-etienne-jr.jpg",
+    "credit": "Hayden Schiff from Cincinnati, USA · CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Derrick_Etienne_(28411015376)_(cropped2).jpg"
+   }
+  },
+  "wilson-isidor": {
+   "qid": "Q58484930",
+   "name": "Wilson Isidor",
+   "birth": "2000-08-27",
+   "gender": "female",
+   "birthPlace": "Rennes",
+   "citizenship": [
+    "France",
+    "Haiti"
+   ],
+   "sports": [
+    "association football"
+   ],
+   "positions": [
+    "forward"
+   ],
+   "heightCm": 186,
+   "clubs": [
+    {
+     "id": "Q180305",
+     "name": "AS Monaco FC",
+     "national": false,
+     "from": "2018"
+    },
+    {
+     "id": "Q760736",
+     "name": "Stade Lavallois",
+     "national": false,
+     "from": "2019",
+     "to": "2020"
+    }
+   ],
+   "nationalTeams": [
+    {
+     "id": "Q236006",
+     "name": "Haiti men's national football team",
+     "national": true,
+     "from": "2026"
+    }
+   ],
+   "currentClub": "AS Monaco FC",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Wilson_Isidor",
+    "fr": "https://fr.wikipedia.org/wiki/Wilson_Isidor"
+   },
+   "commons": {
+    "path": "/athletes/wilson-isidor.jpg",
+    "credit": "Антон Зайцев · CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Wilson_Isidor_in_2022.jpg"
+   }
+  },
+  "carlens-arcus": {
+   "qid": "Q20740578",
+   "name": "Carlens Arcus",
+   "birth": "1996-06-28",
+   "gender": "female",
+   "birthPlace": "Port-au-Prince",
+   "citizenship": [
+    "Haiti"
+   ],
+   "sports": [
+    "association football"
+   ],
+   "positions": [
+    "full-back"
+   ],
+   "heightCm": 180,
+   "clubs": [
+    {
+     "id": "Q638657",
+     "name": "RC Haïtien",
+     "national": false
+    },
+    {
+     "id": "Q501693",
+     "name": "ES Troyes AC",
+     "national": false,
+     "from": "2015"
+    }
+   ],
+   "nationalTeams": [
+    {
+     "id": "Q236006",
+     "name": "Haiti men's national football team",
+     "national": true,
+     "from": "2014",
+     "to": "2014"
+    }
+   ],
+   "currentClub": "ES Troyes AC",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Carlens_Arcus",
+    "fr": "https://fr.wikipedia.org/wiki/Carlens_Arcus"
+   },
+   "commons": {
+    "path": "/athletes/carlens-arcus.jpg",
+    "credit": "Supporterhéninois · CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Lens_B_-_Troyes_B_(13-02-2016)_48.JPG"
+   }
+  },
+  "steeven-saba": {
+   "qid": "Q54627342",
+   "name": "Steeven Saba",
+   "birth": "1993-02-24",
+   "gender": "female",
+   "birthPlace": "Port-au-Prince",
+   "citizenship": [
+    "Haiti",
+    "United States"
+   ],
+   "sports": [
+    "association football"
+   ],
+   "positions": [
+    "midfielder"
+   ],
+   "heightCm": 170,
+   "clubs": [
+    {
+     "id": "Q2301350",
+     "name": "Violette A.C.",
+     "national": false,
+     "from": "2018",
+     "to": "2019"
+    },
+    {
+     "id": "Q167615",
+     "name": "CF Montréal",
+     "national": false,
+     "from": "2020"
+    }
+   ],
+   "nationalTeams": [
+    {
+     "id": "Q236006",
+     "name": "Haiti men's national football team",
+     "national": true,
+     "from": "2018"
+    }
+   ],
+   "currentClub": "CF Montréal",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Steeven_Saba",
+    "fr": "https://fr.wikipedia.org/wiki/Steeven_Saba"
+   }
+  },
+  "zachary-herivaux": {
+   "qid": "Q20631201",
+   "name": "Zachary Herivaux",
+   "birth": "1996-02-01",
+   "gender": "female",
+   "birthPlace": "Suita",
+   "citizenship": [
+    "Haiti",
+    "Japan",
+    "United States"
+   ],
+   "sports": [
+    "association football"
+   ],
+   "positions": [
+    "midfielder"
+   ],
+   "heightCm": 185,
+   "clubs": [
+    {
+     "id": "Q22025437",
+     "name": "San Antonio FC",
+     "national": false
+    },
+    {
+     "id": "Q309095",
+     "name": "New England Revolution",
+     "national": false,
+     "from": "2015",
+     "to": "2019",
+     "caps": 10,
+     "goals": 0
+    },
+    {
+     "id": "Q22025437",
+     "name": "San Antonio FC",
+     "national": false,
+     "from": "2017",
+     "to": "2017",
+     "caps": 5,
+     "goals": 1
+    },
+    {
+     "id": "Q38806632",
+     "name": "Birmingham Legion FC",
+     "national": false,
+     "from": "2019",
+     "to": "2019",
+     "caps": 21,
+     "goals": 0
+    }
+   ],
+   "nationalTeams": [
+    {
+     "id": "Q20807714",
+     "name": "Haiti national under-20 football team",
+     "national": true,
+     "from": "2015",
+     "to": "2015",
+     "caps": 5,
+     "goals": 0
+    },
+    {
+     "id": "Q236006",
+     "name": "Haiti men's national football team",
+     "national": true,
+     "from": "2017"
+    }
+   ],
+   "currentClub": "San Antonio FC",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Zachary_Herivaux",
+    "fr": "https://fr.wikipedia.org/wiki/Zachary_Herivaux"
+   }
+  },
+  "sherly-jeudy": {
+   "qid": "Q27943424",
+   "name": "Sherly Jeudy",
+   "birth": "1998-10-13",
+   "gender": "male",
+   "birthPlace": "Léogâne",
+   "citizenship": [
+    "Haiti"
+   ],
+   "sports": [
+    "association football"
+   ],
+   "positions": [
+    "forward"
+   ],
+   "heightCm": 165,
+   "clubs": [
+    {
+     "id": "Q117104539",
+     "name": "Q117104539",
+     "national": false,
+     "from": "2018",
+     "to": "2018"
+    },
+    {
+     "id": "Q18920445",
+     "name": "Santiago Morning",
+     "national": false,
+     "from": "2019-04",
+     "to": "2019-07"
+    },
+    {
+     "id": "Q117104539",
+     "name": "Q117104539",
+     "national": false,
+     "from": "2019-07",
+     "to": "2019-12"
+    },
+    {
+     "id": "Q192071",
+     "name": "FC Nantes",
+     "national": false,
+     "from": "2020",
+     "to": "2021"
+    },
+    {
+     "id": "Q3116488",
+     "name": "Grenoble Foot 38",
+     "national": false,
+     "from": "2022"
+    }
+   ],
+   "nationalTeams": [
+    {
+     "id": "Q236006",
+     "name": "Haiti men's national football team",
+     "national": true,
+     "from": "2015",
+     "caps": 15,
+     "goals": 11
+    },
+    {
+     "id": "Q21070795",
+     "name": "Haiti women's national under-20 football team",
+     "national": true,
+     "from": "2017",
+     "to": "2018",
+     "caps": 11,
+     "goals": 1
+    }
+   ],
+   "currentClub": "Grenoble Foot 38",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Sherly_Jeudy",
+    "fr": "https://fr.wikipedia.org/wiki/Sherly_Jeudy"
+   }
+  },
+  "roseline-eloissaint": {
+   "qid": "Q83880803",
+   "name": "Roseline Éloissaint",
+   "birth": "1999-02-20",
+   "gender": "male",
+   "birthPlace": "Paillant",
+   "citizenship": [
+    "Haiti"
+   ],
+   "sports": [
+    "association football"
+   ],
+   "positions": [
+    "wing half"
+   ],
+   "heightCm": 161,
+   "clubs": [
+    {
+     "id": "Q109314165",
+     "name": "Tigresses sports association",
+     "national": false,
+     "to": "2018"
+    },
+    {
+     "id": "Q24185143",
+     "name": "AS Blainville",
+     "national": false,
+     "from": "2019",
+     "to": "2019"
+    },
+    {
+     "id": "Q192071",
+     "name": "FC Nantes",
+     "national": false,
+     "from": "2020-01",
+     "caps": 16,
+     "goals": 2
+    }
+   ],
+   "nationalTeams": [
+    {
+     "id": "Q21070795",
+     "name": "Haiti women's national under-20 football team",
+     "national": true,
+     "from": "2018",
+     "to": "2018",
+     "caps": 10,
+     "goals": 2
+    },
+    {
+     "id": "Q236006",
+     "name": "Haiti men's national football team",
+     "national": true,
+     "from": "2018",
+     "caps": 9,
+     "goals": 5
+    }
+   ],
+   "currentClub": "FC Nantes",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Roseline_%C3%89loissaint",
+    "fr": "https://fr.wikipedia.org/wiki/Roseline_%C3%89loissaint"
+   }
+  },
+  "chelsea-surpris": {
+   "qid": "Q83906425",
+   "name": "Chelsea Surpris",
+   "birth": "1996-12-20",
+   "gender": "male",
+   "birthPlace": "Crowley",
+   "citizenship": [
+    "United States",
+    "Haiti"
+   ],
+   "sports": [
+    "association football"
+   ],
+   "positions": [
+    "full-back"
+   ],
+   "heightCm": 167,
+   "clubs": [
+    {
+     "id": "Q642291",
+     "name": "FC Dallas",
+     "national": false,
+     "from": "2019",
+     "to": "2019"
+    },
+    {
+     "id": "Q3322453",
+     "name": "Montauban FCTG",
+     "national": false,
+     "from": "2020-06",
+     "to": "2020-11"
+    },
+    {
+     "id": "Q297784",
+     "name": "ASJ Soyaux",
+     "national": false,
+     "from": "2020-11",
+     "to": "2021",
+     "caps": 4,
+     "goals": 0
+    },
+    {
+     "id": "Q3076700",
+     "name": "FF Yzeure Allier Auvergne",
+     "national": false,
+     "from": "2021",
+     "to": "2022",
+     "caps": 20,
+     "goals": 0
+    },
+    {
+     "id": "Q3116488",
+     "name": "Grenoble Foot 38",
+     "national": false,
+     "from": "2022",
+     "caps": 9,
+     "goals": 2
+    }
+   ],
+   "nationalTeams": [
+    {
+     "id": "Q1671357",
+     "name": "United States women's national under-20 association football team",
+     "national": true
+    },
+    {
+     "id": "Q236006",
+     "name": "Haiti men's national football team",
+     "national": true,
+     "from": "2020",
+     "caps": 13,
+     "goals": 2
+    }
+   ],
+   "currentClub": "Grenoble Foot 38",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Chelsea_Surpris",
+    "fr": "https://fr.wikipedia.org/wiki/Chelsea_Surpris"
+   },
+   "commons": {
+    "path": "/athletes/chelsea-surpris.jpg",
+    "credit": "Khalil Le Rajaoui · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Chelsea_Surpris.jpg"
+   }
+  },
+  "bennedict-mathurin": {
+   "qid": "Q105013647",
+   "name": "Bennedict Mathurin",
+   "birth": "2002-06-19",
+   "gender": "female",
+   "birthPlace": "Montreal",
+   "citizenship": [
+    "Canada",
+    "Haiti"
+   ],
+   "sports": [
+    "basketball"
+   ],
+   "positions": [],
+   "heightCm": 196,
+   "clubs": [
+    {
+     "id": "Q4791464",
+     "name": "Arizona Wildcats men's basketball",
+     "national": false
+    }
+   ],
+   "nationalTeams": [],
+   "currentClub": "Arizona Wildcats men's basketball",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Bennedict_Mathurin",
+    "fr": "https://fr.wikipedia.org/wiki/Bennedict_Mathurin"
+   },
+   "commons": {
+    "path": "/athletes/bennedict-mathurin.jpg",
+    "credit": "MGoBlog · CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bennedict_Mathurin_(cropped).jpg"
+   }
+  },
+  "estevan-florial": {
+   "qid": "Q43425454",
+   "name": "Estevan Florial",
+   "birth": "1997-11-25",
+   "gender": "female",
+   "birthPlace": "Santo Domingo",
+   "citizenship": [
+    "Dominican Republic",
+    "Haiti"
+   ],
+   "sports": [
+    "baseball"
+   ],
+   "positions": [
+    "outfielder"
+   ],
+   "clubs": [
+    {
+     "id": "Q213417",
+     "name": "New York Yankees",
+     "national": false,
+     "from": "2020",
+     "to": "2023"
+    },
+    {
+     "id": "Q642553",
+     "name": "Cleveland Guardians",
+     "national": false,
+     "from": "2024",
+     "to": "2024"
+    },
+    {
+     "id": "Q490046",
+     "name": "Hanwha Eagles",
+     "national": false,
+     "from": "2025"
+    }
+   ],
+   "nationalTeams": [],
+   "currentClub": "Hanwha Eagles",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Estevan_Florial"
+   },
+   "commons": {
+    "path": "/athletes/estevan-florial.jpg",
+    "credit": "YES Network · CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Estevan_Florial_in_2019.png"
+   }
+  },
+  "junior-colson": {
+   "qid": "Q115504150",
+   "name": "Junior Colson",
+   "birth": "2002-12-06",
+   "gender": "female",
+   "birthPlace": "Mirebalais",
+   "citizenship": [
+    "Haiti",
+    "United States"
+   ],
+   "sports": [
+    "American football"
+   ],
+   "positions": [
+    "linebacker"
+   ],
+   "heightCm": 188,
+   "clubs": [
+    {
+     "id": "Q6837794",
+     "name": "Michigan Wolverines football",
+     "national": false,
+     "from": "2021"
+    }
+   ],
+   "nationalTeams": [],
+   "currentClub": "Michigan Wolverines football",
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Junior_Colson"
+   },
+   "commons": {
+    "path": "/athletes/junior-colson.jpg",
+    "credit": "Bobak Ha'Eri · CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:2024-0106-Junior_Coleson.jpg"
+   }
+  },
+  "vanessa-clerveaux": {
+   "qid": "Q66745704",
+   "name": "Vanessa Clerveaux",
+   "birth": "1994-06-17",
+   "gender": "male",
+   "birthPlace": "Brockton",
+   "citizenship": [
+    "Haiti"
+   ],
+   "sports": [
+    "athletics"
+   ],
+   "positions": [],
+   "clubs": [],
+   "nationalTeams": [],
+   "wikipedia": {
+    "en": "https://en.wikipedia.org/wiki/Vanessa_Clerveaux",
+    "fr": "https://fr.wikipedia.org/wiki/Vanessa_Clerveaux"
+   }
+  }
+ }
+}
