@@ -50,7 +50,13 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-navy-700 py-5 text-center text-xs text-navy-300">
-        © {new Date().getFullYear()} {site.name} · {t.independence.join(' • ')}
+        <p>© {new Date().getFullYear()} {site.name} · {t.independence.join(' • ')}</p>
+        <p className="mt-2">
+          Built by{' '}
+          <a href="https://byzewo.com" target="_blank" rel="noopener" className="font-semibold text-cream-50 underline hover:text-white">
+            Zewo
+          </a>
+        </p>
       </div>
     </footer>
   )
