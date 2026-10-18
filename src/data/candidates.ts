@@ -237,6 +237,51 @@ const details: Record<string, Partial<Candidate>> = {
       { office: 'Prezidan Kominote Karayib la (CARICOM)', dates: '1 janvye 2013 – 30 jen 2013', role: 'Prezidans wotatif CARICOM.' },
     ],
   },
+  // TODO(sources): the text supplied (Spanish, no named source or links) is unverified. Check "Me" (avocat), the PRN
+  // presidency, past presidential runs, and the 2026 speeches (Teachers' Day, International Youth Day) against news
+  // reports, then add URLs. Registered structure PRN = Parti Réformiste National per that text.
+  // His past candidacies are NOT listed: no years given. Speech positions are attributed ("li pale pou"), not facts.
+  // TODO(photo): file was images-4.jpeg from Downloads; confirm owner/permission before launch.
+  'rene-st-fort': {
+    photo: '/candidates/rene-st-fort.jpg',
+    photoCredit: 'Foto: kredi ak otorizasyon poko konfime',
+    blurb:
+      'Avoka (« Me ») ak prezidan pati PRN. Dapre yon tèks ki pa gen sous, li pale pou refondasyon sistèm edikasyon an, menm pwogram nan tout lekòl yo, lit kont koripsyon ak patisipasyon jèn yo. Enskripsyon prelimine pou prezidans, estrikti politik: PRN. Apwobasyon final la ap tann verifikasyon CEP.',
+    career: ['Avoka', 'Edikatè ak analis sou sistèm edikasyon an ak eta de dwa an Ayiti (dapre tèks la)'],
+    positions: [
+      { office: 'Prezidan pati PRN', dates: 'Dat poko dokimante', role: 'Dirije pati a (Parti Réformiste National, dapre tèks la).' },
+    ],
+  },
+  // TODO(sources): the text supplied (Spanish) names HaitiLibre as the source of the candidacy but gives no URL. Add it.
+  // Verify the ministerial term (dates, which government) before it is shown as a dated position. The claim about
+  // post-2010 earthquake agricultural reconstruction is the text's characterization, so it is NOT stated as fact.
+  // Spelling follows the CEP ("Gue"); the text writes "Gué". KAPAB matches the CEP structure.
+  // TODO(photo): file was 1002894570.jpg from Downloads (phone image); confirm owner/permission before launch.
+  'joanas-gue': {
+    photo: '/candidates/joanas-gue.jpg',
+    photoCredit: 'Foto: kredi ak otorizasyon poko konfime',
+    blurb:
+      'Agwonòm ak ansyen minis Agrikilti. Dapre yon tèks ki site HaitiLibre, li kandida pou prezidans anba pati KAPAB. Enskripsyon prelimine pou prezidans, estrikti politik: KAPAB. Apwobasyon final la ap tann verifikasyon CEP.',
+    career: ['Agwonòm'],
+    positions: [
+      { office: 'Minis Agrikilti (ansyen)', dates: 'Dat poko dokimante', role: 'Ansyen minis Agrikilti Ayiti. Gouvènman an ak dat yo poko dokimante.' },
+    ],
+  },
+  // TODO(sources): the text supplied (Spanish) has no named source or links, and it says "Daniest Adrien (also cited as
+  // Daniel Adrien)": confirm the identity and the spelling before launch. Spelling follows the CEP ("Daniest").
+  // Verify "médecin", PRC coordinator/official representative (PRC = Parti pour la Restauration et du Changement),
+  // and the Nord-Est / Ouanaminthe link against news reports, then add URLs. Speech positions are attributed, not facts.
+  // TODO(photo): file name looks like a Facebook image download; confirm owner/permission before launch.
+  'daniest-adrien': {
+    photo: '/candidates/daniest-adrien.jpg',
+    photoCredit: 'Foto: kredi ak otorizasyon poko konfime',
+    blurb:
+      'Doktè (medsen) ak kowòdonatè pati PRC. Dapre yon tèks ki pa gen sous, li mande pou sekirite nasyonal la pase devan anvan yo òganize eleksyon. Enskripsyon prelimine pou prezidans, estrikti politik: PRC. Apwobasyon final la ap tann verifikasyon CEP.',
+    career: ['Doktè (medsen)'],
+    positions: [
+      { office: 'Kowòdonatè ak reprezantan ofisyèl pati PRC', dates: 'Dat poko dokimante', role: 'Parti pour la Restauration et du Changement (dapre tèks la). Orijin: Nò-Lès (Wanamant), dapre tèks la.' },
+    ],
+  },
   'jean-ernest-muscadin': {
     photo: '/candidates/jean-ernest-muscadin.jpg',
     photoCredit: 'Foto: kredi ak otorizasyon poko konfime',
