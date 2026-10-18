@@ -5,7 +5,10 @@ import { byCategory } from '@/data/articles'
 import { artists, artistGenres } from '@/data/artists'
 import { publishedInterviews } from '@/data/interviews'
 import { ArticleCard, PageHeader } from '@/components/Shared'
-import { ArtistCard } from '@/components/ArtistCard'
+import Carousel from '@/components/Carousel'
+import { FeatureCard } from '@/components/FeatureCard'
+import { describeArtist } from '@/lib/artistText'
+import { Music } from 'lucide-react'
 import { getT } from '@/i18n/server'
 import { getMusicT } from '@/i18n/music'
 import { formatDate } from '@/lib/utils'
@@ -39,9 +42,26 @@ export default function Page() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
-          {artists.slice(0, 8).map((a) => <ArtistCard key={a.slug} artist={a} />)}
-        </div>
+        <Carousel label={m.showcaseTitle}>
+          {artists.map((a) => {
+            const d = describeArtist(a, m)
+            return (
+              <FeatureCard
+                key={a.slug}
+                href={`/kilti/atis/${a.slug}`}
+                name={a.name}
+                photo={a.photo?.src}
+                alt={a.name}
+                placeholder={<><Music className="h-12 w-12" aria-hidden /><span className="font-serif text-xl font-bold leading-tight text-navy-200">{a.name}</span><span className="text-xs">{m.photoPlaceholder}</span></>}
+                badge={d.genres[0]}
+                flag={a.kind === 'group' ? m.group : undefined}
+                sub={[d.jobs[0], a.start ? `${a.start.slice(0, 4)}${a.end ? `–${a.end.slice(0, 4)}` : ''}` : ''].filter(Boolean).join(' · ') || undefined}
+                preview={d.summary}
+                cta={m.seeProfile}
+              />
+            )
+          })}
+        </Carousel>
         <p className="mt-6 text-center">
           <Link href="/kilti/atis" className="btn-outline">{m.viewAll} ({nf(artists.length)})</Link>
         </p>

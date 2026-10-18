@@ -6,6 +6,7 @@ import { formatDate } from '@/lib/utils'
 import { REGISTRATION_SNAPSHOT } from '@/data/candidates'
 import { getT } from '@/i18n/server'
 import { getTools } from '@/i18n/tools'
+import AreaFilter, { type Area } from '@/components/AreaFilter'
 import type { OfficeKey } from '@/types'
 
 export function generateMetadata(): Metadata {
@@ -14,7 +15,7 @@ export function generateMetadata(): Metadata {
 
 const PAGE_SIZE = 8
 
-type Params = { office?: string; dept?: string; q?: string; page?: string }
+type Params = { office?: string; dept?: string; loc?: string; q?: string; page?: string }
 
 const normalize = (t: string) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
 
@@ -32,19 +33,31 @@ export default function CandidatesPage({ searchParams }: { searchParams: Params 
   const office = officeKeys.find((k) => k === searchParams.office) as OfficeKey | undefined
   const dept = departments.includes(searchParams.dept ?? '') ? searchParams.dept : undefined
   const q = (searchParams.q ?? '').trim().slice(0, 60)
-  const params: Params = { office, dept, q: q || undefined }
+
+  // Communes (mayors) and districts (deputies). Presidents and senators have none, so the filter is hidden for them.
+  const hasAreas = office !== 'president' && office !== 'senator'
+  const areaMap = new Map<string, Area>()
+  if (hasAreas) {
+    for (const c of candidates) {
+      if (c.locality && c.department && (!office || c.officeKey === office)) areaMap.set(`${c.department}/${c.locality}`, { dept: c.department, name: c.locality })
+    }
+  }
+  const areas = Array.from(areaMap.values()).sort((a, b) => a.name.localeCompare(b.name, 'fr'))
+  const loc = areas.find((a) => a.name === searchParams.loc && (!dept || a.dept === dept))?.name
+  const params: Params = { office, dept, loc, q: q || undefined }
 
   const needle = normalize(q)
   const filtered = candidates.filter(
     (c) =>
       (!office || c.officeKey === office) &&
       (!dept || c.department === dept) &&
+      (!loc || c.locality === loc) &&
       (!needle || normalize(`${c.name} ${c.affiliation ?? ''} ${c.locality ?? ''}`).includes(needle)),
   )
   const pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
   const page = Math.min(Math.max(parseInt(searchParams.page ?? '1', 10) || 1, 1), pages)
   const shown = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
-  const filtering = Boolean(office || dept || q)
+  const filtering = Boolean(office || dept || loc || q)
   const count = (key: OfficeKey) => candidates.filter((c) => c.officeKey === key).length
   const nf = (n: number) => n.toLocaleString(lang === 'en' ? 'en-US' : 'fr-FR')
 
@@ -58,24 +71,31 @@ export default function CandidatesPage({ searchParams }: { searchParams: Params 
       <div className="container-max section">
         <form method="get" action="/kandida" className="mb-8 rounded-xl border border-cream-300 bg-white p-4" role="search" aria-label={l.filterLabel}>
           <div className="mb-4 flex flex-wrap gap-2" role="group" aria-label={l.office}>
-            <Link href={href(params, { office: undefined, page: undefined })} className={chip(!office)}>
+            <Link href={href(params, { office: undefined, loc: undefined, page: undefined })} className={chip(!office)}>
               {l.all} ({candidates.length})
             </Link>
             {officeKeys.map((k) => (
-              <Link key={k} href={href(params, { office: k, page: undefined })} className={chip(office === k)}>
+              <Link key={k} href={href(params, { office: k, loc: undefined, page: undefined })} className={chip(office === k)}>
                 {t.offices[k]} ({count(k)})
               </Link>
             ))}
           </div>
           {office && <input type="hidden" name="office" value={office} />}
-          <div className="grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
-            <label className="text-xs font-semibold uppercase tracking-wide text-navy-600">
-              {l.department}
-              <select name="dept" defaultValue={dept ?? ''} className={`${select} mt-1 normal-case`}>
-                <option value="">{l.allDepartments}</option>
-                {departments.map((d) => <option key={d} value={d}>{d}</option>)}
-              </select>
-            </label>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_auto] lg:items-end">
+            <AreaFilter
+              key={`${office ?? 'all'}-${dept ?? ''}-${loc ?? ''}`}
+              departments={departments}
+              areas={areas}
+              initialDept={dept ?? ''}
+              initialArea={loc ?? ''}
+              selectClass={select}
+              labels={{
+                department: l.department,
+                allDepartments: l.allDepartments,
+                locality: office === 'mayor' ? l.localityMayor : office === 'deputy' ? l.localityDeputy : l.locality,
+                allLocalities: l.allLocalities,
+              }}
+            />
             <label className="text-xs font-semibold uppercase tracking-wide text-navy-600">
               {l.search}
               <input type="search" name="q" defaultValue={q} maxLength={60} placeholder={l.placeholder} className={`${select} mt-1 normal-case`} />

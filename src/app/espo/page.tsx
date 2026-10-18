@@ -4,7 +4,9 @@ import { ArrowRight } from 'lucide-react'
 import { byCategory } from '@/data/articles'
 import { athletes } from '@/data/athletes'
 import { ArticleCard, PageHeader } from '@/components/Shared'
-import { AthleteCard } from '@/components/AthleteCard'
+import { initialsOf } from '@/components/AthleteCard'
+import Carousel from '@/components/Carousel'
+import { FeatureCard } from '@/components/FeatureCard'
 import { getT } from '@/i18n/server'
 import { getTools } from '@/i18n/tools'
 import { getWorldCupT } from '@/i18n/worldcup'
@@ -34,9 +36,27 @@ export default function Page() {
             {l.viewAll} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
-          {athletes.slice(0, 8).map((a) => <AthleteCard key={a.slug} athlete={a} />)}
-        </div>
+        <Carousel label={l.hubTitle}>
+          {athletes.map((a) => {
+            const sport = a.sport ? l.sports[a.sport] ?? a.sport : ''
+            const pos = a.positions[0] ? l.positions[a.positions[0]] ?? a.positions[0] : undefined
+            return (
+              <FeatureCard
+                key={a.slug}
+                href={`/espo/atlet/${a.slug}`}
+                name={a.name}
+                photo={a.photo?.src}
+                alt={t.hero.photoAlt(a.name)}
+                placeholder={<><span className="font-serif text-6xl font-bold" aria-hidden>{initialsOf(a.name)}</span><span className="text-xs">{l.photoPlaceholder}</span></>}
+                badge={sport}
+                flag={a.haitiSenior ? (a.haitiSenior.caps ? `${a.haitiSenior.caps} ${l.caps}${a.haitiSenior.goals ? ` · ${a.haitiSenior.goals} ${l.goals}` : ''}` : l.national) : undefined}
+                sub={[pos, a.current?.team].filter(Boolean).join(' · ') || undefined}
+                preview={l.summary(a.name, sport, a.current?.team, a.haitiSenior?.caps, a.haitiSenior?.goals)}
+                cta={l.seeProfile}
+              />
+            )
+          })}
+        </Carousel>
         <p className="mt-6 text-center">
           <Link href="/espo/atlet" className="btn-outline">{l.viewAll} ({nf(athletes.length)})</Link>
         </p>
