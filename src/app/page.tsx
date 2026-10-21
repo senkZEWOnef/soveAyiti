@@ -4,6 +4,8 @@ import { presidentialCandidates as candidates } from '@/data/candidates'
 import { formatDate } from '@/lib/utils'
 import HeroCarousel from '@/components/HeroCarousel'
 import PollStrip from '@/components/PollStrip'
+import QuoteCarousel from '@/components/QuoteCarousel'
+import { sortedQuotes } from '@/data/quotes'
 import { byCategory, sortedArticles } from '@/data/articles'
 import { getT } from '@/i18n/server'
 import { localizeCandidate } from '@/i18n/content'
@@ -84,6 +86,15 @@ export default async function HomePage() {
           })}
         </div>
       </section>
+
+      {sortedQuotes.length > 0 && (
+        <section className="section">
+          <div className="container-max">
+            <SectionTitle eyebrow={t.quotes.eyebrow} title={t.quotes.title} />
+            <QuoteCarousel quotes={sortedQuotes.slice(0, 10)} />
+          </div>
+        </section>
+      )}
 
       <section className="pb-14 sm:pb-20">
         <div className="container-max">

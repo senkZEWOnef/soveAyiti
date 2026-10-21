@@ -6,7 +6,7 @@ import { useT } from '@/i18n/client'
 
 // One card per swipe with the next card peeking in, so people see there is more. Native scroll-snap: touch swipe,
 // trackpad, arrow buttons and the keyboard (left/right arrows when the strip is focused) all work.
-export default function Carousel({ children, label }: { children: ReactNode; label: string }) {
+export default function Carousel({ children, label, itemClass = 'w-[78%] sm:w-[46%] lg:w-[31%]' }: { children: ReactNode; label: string; itemClass?: string }) {
   const t = useT()
   const list = useRef<HTMLUListElement>(null)
   const items = Children.toArray(children)
@@ -65,7 +65,7 @@ export default function Carousel({ children, label }: { children: ReactNode; lab
             role="group"
             aria-roledescription="slide"
             aria-label={`${i + 1} / ${items.length}`}
-            className="w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[31%]"
+            className={`shrink-0 snap-start ${itemClass}`}
           >
             {item}
           </li>

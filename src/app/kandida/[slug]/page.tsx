@@ -8,6 +8,8 @@ import { formatDate } from '@/lib/utils'
 import { showPublicRecord } from '@/data/site'
 import { getT } from '@/i18n/server'
 import { localizeCandidate } from '@/i18n/content'
+import QuoteCarousel from '@/components/QuoteCarousel'
+import { quotesFor } from '@/data/quotes'
 import ShareButtons from '@/components/ShareButtons'
 import { getTools } from '@/i18n/tools'
 import type { SourceLink } from '@/types'
@@ -96,6 +98,12 @@ export default function CandidatePage({ params }: { params: { slug: string } }) 
         <p className="my-6 rounded-lg border border-navy-200 bg-white p-4 text-sm text-navy-700">
           {p.workInProgress}
         </p>
+
+        {quotesFor(c.slug).length > 0 && (
+          <Block title={t.quotes.profileTitle}>
+            <QuoteCarousel quotes={quotesFor(c.slug)} />
+          </Block>
+        )}
 
         <Block title={p.about}>
           {c.education.length + c.career.length === 0 ? pending(p.bioPending) : null}
