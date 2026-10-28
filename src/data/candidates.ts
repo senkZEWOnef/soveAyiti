@@ -282,6 +282,35 @@ const details: Record<string, Partial<Candidate>> = {
       { office: 'Kowòdonatè ak reprezantan ofisyèl pati PRC', dates: 'Dat poko dokimante', role: 'Parti pour la Restauration et du Changement (dapre tèks la). Orijin: Nò-Lès (Wanamant), dapre tèks la.' },
     ],
   },
+  // TODO(sources): bio is Wikipedia text (flagged there for too few in-text citations; general refs are Le Nouvelliste:
+  // J. Jean Baptiste 5 Oct 2017, P.-R. Dumas 24 May 2005, F. Dorvilier 17 Nov 2014). Add direct URLs. Birth date and family
+  // background left out. The article says "Master in Public Administration, Harvard" in the text and "Harvard Kennedy School"
+  // in the infobox: shown as the Kennedy School only, to be verified. Registered structure EAPH = En Avant Haïti (party in the
+  // infobox). Registered under the CEP name "Philippe Gerard Jerry Tardieu"; he is publicly known as Jerry Tardieu.
+  // Royal Oasis role is his own infobox entry, no dates. Book dates are those printed in the article.
+  // TODO(photo): file was a site-assets webp from Downloads (converted to jpg); confirm owner/permission before launch.
+  'philippe-gerard-jerry-tardieu': {
+    photo: '/candidates/philippe-gerard-jerry-tardieu.jpg',
+    photoCredit: 'Foto: kredi ak otorizasyon poko konfime',
+    blurb:
+      'Otè, antreprenè ak ansyen depite Petyonvil (2016–2020), li konnen kòm Jerry Tardieu. Enskripsyon prelimine pou prezidans, estrikti politik: EAPH (En Avant Haïti). Apwobasyon final la ap tann verifikasyon CEP.',
+    education: [
+      'Institution Saint-Louis de Gonzague (Ayiti)',
+      'Lisans — European University College (Brussels)',
+      'Harvard Kennedy School (metriz nan administrasyon piblik, dapre Wikipedia, poko verifye)',
+    ],
+    career: [
+      'Fondatè ak direktè jeneral Royal Oasis, envestisè ak antreprenè',
+      'Otè: « L’avenir en face. Haïti à l’épreuve de la mondialisation et du défaitisme de ses élites » (2005); « Investir et s’investir en Haïti, un acte de foi » (2014); « Dans l’enfer du parlement: quatre années de combat et des idées pour demain » (2020)',
+    ],
+    positions: [
+      { office: 'Depite pou Petyonvil (Pétion-Ville)', dates: '2016 – 2020', role: 'Reprezante Petyonvil nan Chanm Depite yo, anba pati En Avant Haïti.' },
+    ],
+    officialLinks: [
+      { label: 'Sit pèsonèl Jerry Tardieu', url: 'https://jerrytardieu.com' },
+      { label: 'En Avant Haïti (pati a)', url: 'https://www.enavant.ht' },
+    ],
+  },
   'jean-ernest-muscadin': {
     photo: '/candidates/jean-ernest-muscadin.jpg',
     photoCredit: 'Foto: kredi ak otorizasyon poko konfime',
