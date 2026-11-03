@@ -311,6 +311,37 @@ const details: Record<string, Partial<Candidate>> = {
       { label: 'En Avant Haïti (pati a)', url: 'https://www.enavant.ht' },
     ],
   },
+  // TODO(sources): all facts come from the candidate's own site (etzeremile.com/apropos), i.e. self-reported; verify
+  // independently. The page names no political party; the CEP registration lists structure SOLEY. Dates as printed there.
+  // TODO(photo): file supplied by the editor (Downloads/2221180.jpg); confirm owner/permission before launch.
+  'etzer-s-emile': {
+    photo: '/candidates/etzer-s-emile.jpg',
+    photoCredit: 'Foto: kredi ak otorizasyon poko konfime',
+    blurb:
+      'Ekonomis, antreprenè ak otè, li fèt Kavayon (Sid). Li dirije Fondasyon Avenir ak AyitiLab. Enskripsyon prelimine pou prezidans, estrikti: SOLEY. Enfòmasyon yo soti sou pwòp sit kandida a, poko verifye ofisyèlman; apwobasyon final la ap tann verifikasyon CEP.',
+    education: [
+      'Lisans nan syans ekonomik — Université Quisqueya',
+      'Etid sosyoloji — Université d’État d’Haïti',
+      'MBA nan finans ak labank — Tamkang University (Taiwan), 2011 (bous gouvènman taiwanè 2008, ane lang mandaren nan National Central University)',
+      'Fòmasyon nan gouvènans, devlopman ekonomik ak inovasyon — Harvard Kennedy School, 2015',
+      'Pwogram IVLP Depatman Deta ameriken (komès entènasyonal), 2017',
+    ],
+    career: [
+      'Direktè adjwen (2012) answit direktè (2015) Sant Antreprenarya ak Inovasyon, Université Quisqueya',
+      'Prezidan Fondation Avenir (edikasyon finansyè ak sivik, antreprenarya), depi 2020',
+      'Fondatè ak PDG Haïti Efficace (kabinè konsiltan), 2024',
+      'Lanse AyitiLab, ki prezante kòm premye akseleratè startup teknolojik nan peyi a, 2026',
+      'Prezidan asosyasyon ansyen bousye taiwanè yo an Ayiti',
+      'Animatè yon emisyon edikasyon finansyè chak semèn (Télé Caraïbes, YouTube, Facebook)',
+      'Otè: « Haïti a choisi de devenir un pays pauvre: les 20 raisons qui le prouvent » (2017)',
+    ],
+    officialLinks: [
+      { label: 'Sit ofisyèl Etzer Emile', url: 'https://www.etzeremile.com' },
+      { label: 'Facebook', url: 'https://www.facebook.com/OfficialEtzerEmile' },
+      { label: 'X (Twitter)', url: 'https://x.com/etzeremile' },
+      { label: 'YouTube', url: 'https://www.youtube.com/@EtzerEmile/featured' },
+    ],
+  },
   'jean-ernest-muscadin': {
     photo: '/candidates/jean-ernest-muscadin.jpg',
     photoCredit: 'Foto: kredi ak otorizasyon poko konfime',
