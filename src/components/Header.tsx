@@ -32,6 +32,7 @@ export default function Header() {
   // `desktop: false` items live only in the phone menu (and the footer) so the desktop bar stays readable.
   const navigation = [
     { name: t.nav.candidates, href: '/kandida', desktop: true },
+    { name: t.nav.places, href: '/peyi', desktop: true },
     { name: t.nav.vote, href: '/vote', desktop: true },
     { name: t.nav.guide, href: '/gid-elekte', desktop: false },
     { name: t.nav.sports, href: '/espo', desktop: true },

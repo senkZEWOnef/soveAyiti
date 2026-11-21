@@ -28,6 +28,80 @@ const details: Record<string, Partial<Candidate>> = {
       { office: 'Majistra Delma (ansyen)', dates: 'Dat poko dokimante', role: 'Ansyen majistra komin Delma. Detay ak sous poko ajoute.' },
     ],
   },
+  // Researched 19 Nov 2026 from Wikipedia + HaitiLibre; Wikipedia is a secondary source, so primary links are still to add.
+  // Photo: Kendra Helmer / USAID, public domain (Wikimedia Commons "Jude Célestin.jpg"). The Dec 2023 arrest-warrant
+  // report (HaitiLibre) is NOT entered; if added, it belongs in `publicRecord` under the review rules.
+  'jude-celestin': {
+    photo: '/candidates/jude-celestin.jpg',
+    photoCredit: 'Foto: Kendra Helmer, USAID (domèn piblik, Wikimedia Commons)',
+    blurb:
+      'Enjenyè mekanik, ansyen direktè jeneral Sant Nasyonal Ekipman (CNE). Li te kandida prezidan an 2010 (INITE) ak 2015 (LAPEH). Enskripsyon prelimine pou prezidans, estrikti politik: ENA. Apwobasyon final la ap tann verifikasyon CEP.',
+    education: ['Etid mekanik nan inivèsite Fribourg ak Lozàn (Swis), dapre Wikipedia ak HaitiLibre'],
+    career: [
+      'Enjenyè responsab pwodiksyon nan Minoterie d’Haïti (1985)',
+      'Fondatè JC Construction (konpayi konsiltasyon ak konstriksyon)',
+      'Konseye Prezidan René Préval pou enfrastrikti',
+      'Te kandida prezidan an 2010 (plateform INITE) ak 2015 (LAPEH); li te al nan dezyèm tou an 2015',
+    ],
+    positions: [
+      { office: 'Direktè jeneral Sant Nasyonal Ekipman (CNE)', dates: 'Dat egzak poko dokimante', role: 'Ansyen direktè egzekitif sant leta ki sou konstriksyon an.' },
+    ],
+    sources: [
+      CEP_SOURCE,
+      { label: 'Wikipedia — Jude Célestin', url: 'https://en.wikipedia.org/wiki/Jude_C%C3%A9lestin' },
+      { label: 'HaitiLibre — Portrait : Who is Jude Célestin ?', url: 'https://www.haitilibre.com/en/news-15884-haiti-portrait-who-is-jude-celestin.html' },
+    ],
+  },
+  // Researched 19 Nov 2026 (Wikipedia, CMC/AFP/Political.org via news search). Photo: Ministerio de Relaciones Exteriores
+  // del Perú, CC BY-SA 2.0 (Wikimedia Commons "Martine Moïse in Lima.jpg") — attribution required, kept in photoCredit.
+  // The 2024 indictment reported by Wikipedia is NOT entered (needs a primary/court source and the publicRecord review).
+  'marie-etienne-martine-joseph-moise': {
+    photo: '/candidates/marie-etienne-martine-joseph-moise.jpg',
+    photoCredit: 'Foto: Ministerio de Relaciones Exteriores del Perú, CC BY-SA 2.0 (Wikimedia Commons)',
+    blurb:
+      'Ansyen premye dam Ayiti (2017–2021) ak vèv Prezidan Jovenel Moïse. Li enskri sou bannyè GAD. Enskripsyon prelimine pou prezidans. Apwobasyon final la ap tann verifikasyon CEP.',
+    education: ['Lisans nan etid entèpretasyon, Inivèsite Quisqueya (1997), dapre Wikipedia'],
+    positions: [
+      { office: 'Premye dam Ayiti', dates: '7 fevriye 2017 – 7 jiyè 2021', role: 'Prezidan Fondasyon Klere Ayiti (edikasyon sivik ak kesyon fanm). Prezidan kowòdinasyon Fon Mondyal nan Ayiti depi oktòb 2017.' },
+    ],
+    sources: [
+      CEP_SOURCE,
+      { label: 'Wikipedia — Martine Moïse', url: 'https://en.wikipedia.org/wiki/Martine_Mo%C3%AFse' },
+      { label: 'Political.org — enskripsyon 15 novanm 2026', url: 'https://political.org/2026/11/15/martine-moise-widow-of-slain-haitian-president-jovenel-moise-registers-for-haitis-presidential-race/' },
+    ],
+  },
+  // Researched 19 Nov 2026 (Wikipedia "Dominique Dupuy (politician)", HaitiLibre, news search). Photo: U.S. Embassy Haiti,
+  // public domain (Wikimedia Commons "Dominique Dupuy - 2024 (cropped).jpg").
+  'dominique-dupuy': {
+    photo: '/candidates/dominique-dupuy.jpg',
+    photoCredit: 'Foto: Anbasad Etazini Ayiti (domèn piblik, Wikimedia Commons)',
+    blurb:
+      'Diplomat, ansyen minis Afè Etranjè (jen–novanm 2024) ak ansyen reprezantan pèmanan Ayiti nan UNESCO. Enskripsyon prelimine pou prezidans, estrikti politik: PVD. Apwobasyon final la ap tann verifikasyon CEP.',
+    education: ['Bakaloreya nan devlopman entènasyonal, Inivèsite McGill (2012), dapre Wikipedia'],
+    positions: [
+      { office: 'Minis Afè Etranjè, Kilt ak Ayisyen k ap viv aletranje', dates: '12 jen – 16 novanm 2024', role: 'Nonmen pa premye minis Garry Conille.' },
+      { office: 'Manm Konsèy Prezidansyèl Tranzisyon (demisyone)', dates: '20 – 26 mas 2024', role: 'Nonmen pa EDE/RED, li demisyone apre menas.' },
+      { office: 'Reprezantan pèmanan Ayiti nan UNESCO', dates: 'Depi 2020', role: 'Nonmen pa Prezidan Jovenel Moïse; reprezante Ayiti nan Konsèy Egzekitif UNESCO.' },
+    ],
+    sources: [
+      CEP_SOURCE,
+      { label: 'Wikipedia — Dominique Dupuy (politician)', url: 'https://en.wikipedia.org/wiki/Dominique_Dupuy_(politician)' },
+      { label: 'HaitiLibre — Dominique Dupuy resigns from the CPT', url: 'https://www.haitilibre.com/en/news-41963-haiti-flash-dominique-dupuy-resigns-from-the-presidential-transitional-council-video.html' },
+    ],
+  },
+  // Researched 19 Nov 2026: rector of Université Quisqueya since 2007 per MIT Haiti / The Dialogue profiles. The search
+  // found NO article linking him to MYEL or a presidential bid, so the MYEL link rests on the CEP list alone.
+  // No photo: none found with a clear free licence.
+  'jacky-lumarque': {
+    blurb:
+      'Rektè Inivèsite Quisqueya depi 2007, ansyen kowòdonatè gwoup travay edikasyon (GTEF) sou gouvènman René Préval. Enskripsyon prelimine pou prezidans, estrikti politik: MYEL. Apwobasyon final la ap tann verifikasyon CEP.',
+    career: ['Rektè Inivèsite Quisqueya (depi 2007)', 'Kowòdonatè Gwoup Travay sou Edikasyon ak Fòmasyon (GTEF) anba Prezidan René Préval'],
+    sources: [
+      CEP_SOURCE,
+      { label: 'MIT Haiti — Jacky Lumarque', url: 'https://haiti.mit.edu/?p=837' },
+      { label: 'The Dialogue — Jacky Lumarque', url: 'https://thedialogue.org/expert/jacky-lumarque' },
+    ],
+  },
   // TODO(sources): bio is Wikipedia-style (refs: IPU data.ipu.org, Routledge/CQ Press directories). Add direct URLs.
   // Birth date and party history ("Alliance Parlementaire pour Haïti") left out: registered structure is P.R.
   // TODO(photo): confirm owner/permission before launch.

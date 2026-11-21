@@ -15,6 +15,7 @@ const ht = {
   questionOfTheWeek: 'Ki sa ou ta renmen nou eksplike pou ou semèn sa a?',
   nav: {
     candidates: 'Kandida',
+    places: 'Peyi a',
     vote: 'Vote',
     sports: 'Espò',
     culture: 'Kilti',
@@ -419,6 +420,7 @@ const fr: Dict = {
   questionOfTheWeek: 'Qu’aimeriez-vous que nous vous expliquions cette semaine ?',
   nav: {
     candidates: 'Candidats',
+    places: 'Le pays',
     vote: 'Vote',
     sports: 'Sports',
     culture: 'Culture',
@@ -821,6 +823,7 @@ const en: Dict = {
   questionOfTheWeek: 'What would you like us to explain for you this week?',
   nav: {
     candidates: 'Candidates',
+    places: 'The country',
     vote: 'Vote',
     sports: 'Sports',
     culture: 'Culture',

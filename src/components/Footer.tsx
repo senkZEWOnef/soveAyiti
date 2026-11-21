@@ -28,6 +28,7 @@ export default function Footer() {
           <h3 className="font-sans text-sm font-bold uppercase tracking-widest text-cream-50">{t.footer.explore}</h3>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href="/kandida" className="hover:text-white">{t.footer.candidates}</Link></li>
+            <li><Link href="/peyi" className="hover:text-white">{t.nav.places}</Link></li>
             <li><Link href="/eksplike" className="hover:text-white">{t.footer.explain}</Link></li>
             <li><Link href="/gid-elekte" className="hover:text-white">{t.nav.guide}</Link></li>
             <li><Link href="/verifye" className="hover:text-white">{t.nav.verify}</Link></li>
